@@ -17,5 +17,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ]] --
 
-assert(SMODS.load_file('src/tweaks/consumables.lua'))()
-assert(SMODS.load_file('src/tweaks/vouchers.lua'))()
+-- Tweak for Omen Globe can be found in lovely.toml and localization/en-us.lua

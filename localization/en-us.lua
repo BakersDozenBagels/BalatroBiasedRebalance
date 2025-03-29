@@ -19,6 +19,15 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 return {
     descriptions = {
         Joker = {
+        },
+        Voucher = {
+            v_omen_globe = {
+                text = {
+                    "{C:spectral}Spectral{} cards may",
+                    "appear in any of",
+                    "the {C:tarot}Arcana{} or {C:planet}Celestial{} Packs",
+                },
+            }
         }
     },
     misc = {}
