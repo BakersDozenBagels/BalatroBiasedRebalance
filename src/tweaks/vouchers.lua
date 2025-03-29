@@ -18,3 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]] --
 
 -- Tweak for Omen Globe can be found in lovely.toml and localization/en-us.lua
+
+SMODS.Voucher:take_ownership('blank', {
+    cost = 5
+}, true)
