@@ -17,6 +17,27 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ]] --
 
+--#region Banned Jokers
+local banned = {
+    "8_ball", "smiley", "green_joker", "superposition", "walkie_talkie",
+    "ceremonial", "loyalty_card", "dusk", "seeing_double", "matador",
+    "campfire", "hit_the_road"
+}
+
+for _, v in pairs(banned) do
+    G.P_CENTERS["j_" .. v] = nil
+    local ix = 1
+    while ix < #G.P_CENTER_POOLS.Joker do
+        if G.P_CENTER_POOLS.Joker[ix].key == "j_" .. v then
+            table.remove(G.P_CENTER_POOLS.Joker, ix)
+        else
+            ix = ix + 1
+        end
+    end
+end
+--#endregion
+
+--#region Common Jokers
 SMODS.Joker:take_ownership("joker", { config = { mult = 5 } })
 SMODS.Joker:take_ownership("greedy_joker", { config = { extra = { s_mult = 4, suit = 'Diamonds' } } })
 SMODS.Joker:take_ownership("lusty_joker", { config = { extra = { s_mult = 4, suit = 'Hearts' } } })
@@ -88,3 +109,10 @@ SMODS.Joker:take_ownership("trousers", {
         end
     end
 })
+--#endregion
+
+--#region Uncommon Jokers
+--#endregion
+
+--#region Rare Jokers
+--#endregion
