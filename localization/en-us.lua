@@ -19,6 +19,22 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 return {
     descriptions = {
         Joker = {
+            j_scary_face = {
+                text = {
+                    "Played {C:attention}face{} cards",
+                    "give {C:chips}+#1#{} Chips",
+                    "and {C:mult}+#2#{} Mult",
+                    "when scored",
+                }
+            },
+            j_delayed_grat = {
+                name = "Reduced Gratification",
+                text = {
+                    "Earn {C:money}$#1#{} when",
+                    "{C:red}discarding {C:attention}#2#",
+                    "or fewer cards"
+                }
+            }
         },
         Voucher = {
             v_omen_globe = {
