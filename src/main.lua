@@ -17,5 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ]] --
 
+SerenosThing = {}
+
 assert(SMODS.load_file('src/tweaks/consumables.lua'))()
 assert(SMODS.load_file('src/tweaks/vouchers.lua'))()
