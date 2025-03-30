@@ -56,3 +56,35 @@ SMODS.Joker:take_ownership("delayed_grat", {
     end,
     calc_dollar_bonus = function(self, card) end
 })
+
+SMODS.Joker:take_ownership("red_card", { cost = 4 })
+SMODS.Joker:take_ownership("ticket", { config = { extra = 5 } })
+SMODS.Joker:take_ownership("space", { rarity = 1 })
+SMODS.Joker:take_ownership("hiker", { rarity = 1 })
+SMODS.Joker:take_ownership("erosion", { rarity = 1, cost = 4 })
+SMODS.Joker:take_ownership("to_the_moon", { rarity = 1 })
+
+SMODS.Joker:take_ownership("trousers", {
+    rarity = 1,
+    config = { extra = { mult = 2, chips = 8 }, mult = 0, chips = 0 },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult, card.ability.extra.chips, localize('Two Pair', 'poker_hands'), card.ability.mult, card.ability.chips } }
+    end,
+    calculate = function(self, card, context)
+        if context.before and (next(context.poker_hands['Two Pair']) or next(context.poker_hands['Full House'])) and not context.blueprint then
+            card.ability.mult = card.ability.mult + card.ability.extra.mult
+            card.ability.chips = card.ability.chips + card.ability.extra.chips
+            return {
+                message = localize('k_upgrade_ex'),
+                colour = G.C.RED,
+                card = self
+            }
+        end
+        if context.joker_main then
+            return {
+                mult = card.ability.mult,
+                extra = { chips = card.ability.chips }
+            }
+        end
+    end
+})

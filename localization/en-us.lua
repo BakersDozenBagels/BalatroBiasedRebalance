@@ -34,7 +34,15 @@ return {
                     "{C:red}discarding {C:attention}#2#",
                     "or fewer cards"
                 }
-            }
+            },
+            j_trousers = {
+                text = {
+                    "This Joker gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
+                    "if played hand contains",
+                    "a {C:attention}#3#",
+                    "{C:inactive}(Currently {C:red}+#4#{C:inactive} Mult and {C:chips}+#5#{} Chips)",
+                },
+            },
         },
         Voucher = {
             v_omen_globe = {
@@ -43,7 +51,7 @@ return {
                     "appear in any of",
                     "the {C:tarot}Arcana{} or {C:planet}Celestial{} Packs",
                 },
-            }
+            },
         }
     },
     misc = {}
