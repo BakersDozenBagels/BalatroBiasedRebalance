@@ -177,7 +177,219 @@ SMODS.Joker:take_ownership("seance", {
         if context.joker_main then return {} end
     end
 })
+
+local raw_G_FUNCS_can_discard = G.FUNCS.can_discard
+function G.FUNCS.can_discard(e)
+    for k, v in pairs(SMODS.find_card("j_troubadour")) do
+        if #G.hand.highlighted > v.ability.extra.discard_size then
+            e.config.colour = G.C.UI.BACKGROUND_INACTIVE
+            e.config.button = nil
+            return
+        end
+    end
+    raw_G_FUNCS_can_discard(e)
+end
+
+SMODS.Joker:take_ownership("troubadour", {
+    config = { extra = { h_size = 2, h_plays = 0, discard_size = 4 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.h_size, card.ability.extra.discard_size } }
+    end
+})
+
+SMODS.Joker:take_ownership("rough_gem", {
+    config = { extra = { odds = 2, dollars = 3 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { G.GAME.probabilities.normal, card.ability.extra.odds, card.ability.extra.dollars } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and context.other_card:is_suit("Diamonds") then
+            local amount = pseudorandom(pseudoseed('rough_gem')) < G.GAME.probabilities.normal / card.ability.extra.odds
+                and card.ability.extra.dollars or 0
+            G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + amount
+            if not Talisman.config_file.disable_anims then
+                G.E_MANAGER:add_event(Event({
+                    func = (function()
+                        G.GAME.dollar_buffer = 0; return true
+                    end)
+                }))
+            else
+                G.GAME.dollar_buffer = 0
+            end
+            if amount == 0 then return {} end
+            return {
+                dollars = amount
+            }
+        end
+    end
+})
+
+local raw_Card_shatter = Card.shatter
+function Card:shatter(...)
+    if self.config.center.key == 'm_glass' then
+        G.GAME.SerenosThing_shattered = (G.GAME.SerenosThing_shattered or 0) + 1
+    end
+    return raw_Card_shatter(self, ...)
+end
+
+SMODS.Joker:take_ownership("glass", {
+    config = { extra = 0.5 },
+    perishable_compat = true,
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra, (G.GAME.SerenosThing_shattered or 0) * card.ability.extra + 1 } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                xmult = (G.GAME.SerenosThing_shattered or 0) * card.ability.extra + 1
+            }
+        end
+
+        if context.cards_destroyed or context.remove_playing_cards or context.using_consumeable then return {} end
+    end
+})
+
+SMODS.Joker:take_ownership("bootstraps", {
+    cost = 5,
+    config = { extra = { mult = 18, dollars = 1 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult, card.ability.extra.dollars } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                mult = card.ability.extra.mult
+            }
+        end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        G.GAME.inflation = G.GAME.inflation + card.ability.extra.dollars
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                for k, v in pairs(G.I.CARD) do
+                    if v.set_cost then v:set_cost() end
+                end
+                return true
+            end
+        }))
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.inflation = G.GAME.inflation - card.ability.extra.dollars
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                for k, v in pairs(G.I.CARD) do
+                    if v.set_cost then v:set_cost() end
+                end
+                return true
+            end
+        }))
+    end,
+})
+
+SMODS.Joker:take_ownership("red_card", {
+    rarity = 2,
+    config = { extra = 0.1 },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra, card.ability.x_mult } }
+    end,
+    calculate = function(self, card, context)
+        if context.skipping_booster and not context.blueprint then
+            card.ability.x_mult = card.ability.x_mult + card.ability.extra
+            G.E_MANAGER:add_event(Event {
+                func = function()
+                    card_eval_status_text(card, 'extra', nil, nil, nil, {
+                        message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.x_mult } },
+                        colour = G.C.RED,
+                        delay = 0.45,
+                        card = card
+                    })
+                    return true
+                end
+            })
+            return {}
+        end
+        if context.joker_main then
+            return { x_mult = card.ability.x_mult }
+        end
+    end,
+})
+
+SMODS.Joker:take_ownership("todo_list", {
+    rarity = 2,
+    cost = 5,
+    config = { extra = { dollars = 4, poker_hand = 'High Card', dx_mult = 0.2, played = false } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.dx_mult, localize(card.ability.to_do_poker_hand, 'poker_hands'), card.ability.x_mult } }
+    end,
+    calculate = function(self, card, context)
+        if context.before and context.scoring_name == card.ability.to_do_poker_hand then
+            if card.ability.extra.played then
+                return {}
+            end
+            card.ability.x_mult = card.ability.x_mult + card.ability.extra.dx_mult
+            card.ability.extra.played = true
+            return {
+                message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.x_mult } },
+                colour = G.C.RED
+            }
+        end
+        if context.end_of_round and not context.blueprint then
+            card.ability.extra.played = false
+        end
+        if context.joker_main then
+            return { x_mult = card.ability.x_mult }
+        end
+    end,
+})
 --#endregion
 
 --#region Rare Jokers
+SMODS.Joker:take_ownership("vagabond", { config = { extra = 5 } })
+SMODS.Joker:take_ownership("tribe", { config = { Xmult = 2.5, type = 'Flush' } })
+SMODS.Joker:take_ownership("card_sharp", { cost = 8, rarity = 3 })
+
+SMODS.Joker:take_ownership("invisible", {
+    cost = 10,
+    config = { extra = 3 },
+    calculate = function(self, card, context)
+        if context.selling_self and (card.ability.invis_rounds >= card.ability.extra) and not context.blueprint then
+            local eval = function(card) return (card.ability.loyalty_remaining == 0) and not G.RESET_JIGGLES end
+            juice_card_until(card, eval, true)
+            local my_ix
+            for i = 1, #G.jokers.cards do
+                if G.jokers.cards[i] == card then
+                    my_ix = i
+                end
+            end
+
+            if not my_ix then
+                card_eval_status_text(card, 'extra', nil, nil, nil,
+                    { message = "???" })
+                return {}
+            end
+
+            if #G.jokers.cards > my_ix and G.jokers.cards[my_ix + 1] then
+                if #G.jokers.cards <= G.jokers.config.card_limit then
+                    card_eval_status_text(card, 'extra', nil, nil, nil,
+                        { message = localize('k_duplicated_ex') })
+                    local chosen_joker = G.jokers.cards[my_ix + 1]
+                    local card = copy_card(chosen_joker, nil, nil, nil,
+                        chosen_joker.edition and chosen_joker.edition.negative)
+                    if card.ability.invis_rounds then card.ability.invis_rounds = 0 end
+                    card:add_to_deck()
+                    G.jokers:emplace(card)
+                    return nil, true
+                else
+                    card_eval_status_text(card, 'extra', nil, nil, nil,
+                        { message = localize('k_no_room_ex') })
+                end
+            else
+                card_eval_status_text(card, 'extra', nil, nil, nil,
+                    { message = localize('k_no_other_jokers') })
+            end
+
+            return {}
+        end
+    end
+})
 --#endregion

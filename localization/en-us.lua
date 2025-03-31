@@ -50,6 +50,59 @@ return {
                     "{C:tarot}Tarot{} or {C:planet}Planet{} card",
                     "with a {C:spectral}Spectral{} card"
                 }
+            },
+            j_troubadour = {
+                text = {
+                    "{C:attention}+#1#{} hand size,",
+                    "discard at most {C:attention}#2#{}",
+                    "cards at once"
+                },
+            },
+            j_rough_gem = {
+                text = {
+                    "Played cards with",
+                    "{C:diamonds}Diamond{} suit have",
+                    "{C:green}#1# in #2#{} chance to",
+                    "earn {C:money}$#3#{} when scored",
+                }
+            },
+            j_glass = {
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult for every",
+                    "{C:attention}Glass Card{} destroyed this run",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
+                }
+            },
+            j_bootstraps = {
+                text = {
+                    "{C:mult}+#1#{} Mult,",
+                    "everything costs {C:money}$#2#{} more"
+                }
+            },
+            j_red_card = {
+                text = {
+                    "This Joker gains",
+                    "{X:mult,C:white}X#1#{} Mult when any",
+                    "{C:attention}Booster Pack{} is skipped",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
+                }
+            },
+            j_todo_list = {
+                text = {
+                    "Gains {X:mult,C:white}X#1#{} Mult the first time",
+                    "{C:attention}poker hand{} is a {C:attention}#2#{} this round,",
+                    "poker hand changes at end of round",
+                    "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
+                }
+            },
+            j_invisible = {
+                text = {
+                    "After {C:attention}#1#{} rounds,",
+                    "sell this card to",
+                    "{C:attention}Duplicate{} the Joker",
+                    "to the right of this one",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)",
+                }
             }
         },
         Voucher = {
