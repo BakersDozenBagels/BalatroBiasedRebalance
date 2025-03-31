@@ -18,23 +18,42 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]] --
 
 --#region Banned Jokers
-local banned = {
-    "8_ball", "smiley", "green_joker", "superposition", "walkie_talkie",
-    "ceremonial", "loyalty_card", "dusk", "seeing_double", "matador",
-    "campfire", "hit_the_road"
-}
+local function ban()
+    local banned = {
+        { "8_ball",     "smiley",       "green_joker", "superposition", "walkie_talkie" },
+        { "ceremonial", "loyalty_card", "dusk",        "seeing_double", "matador" },
+        { "campfire",   "hit_the_road" }
+    }
 
-for _, v in pairs(banned) do
-    G.P_CENTERS["j_" .. v] = nil
-    local ix = 1
-    while ix < #G.P_CENTER_POOLS.Joker do
-        if G.P_CENTER_POOLS.Joker[ix].key == "j_" .. v then
-            table.remove(G.P_CENTER_POOLS.Joker, ix)
-        else
-            ix = ix + 1
+    for i, row in pairs(banned) do
+        for _, v in pairs(row) do
+            G.P_CENTERS["j_" .. v] = nil
+            local ix = 1
+            while ix < #G.P_CENTER_POOLS.Joker do
+                if G.P_CENTER_POOLS.Joker[ix].key == "j_" .. v then
+                    table.remove(G.P_CENTER_POOLS.Joker, ix)
+                else
+                    ix = ix + 1
+                end
+            end
+            ix = 1
+            while ix < #G.P_JOKER_RARITY_POOLS[i] do
+                if G.P_JOKER_RARITY_POOLS[i][ix].key == "j_" .. v then
+                    table.remove(G.P_JOKER_RARITY_POOLS[i], ix)
+                else
+                    ix = ix + 1
+                end
+            end
         end
     end
 end
+local raw_Game_init_item_prototypes = Game.init_item_prototypes
+function Game:init_item_prototypes()
+    raw_Game_init_item_prototypes(self)
+    ban()
+end
+
+ban()
 --#endregion
 
 --#region Common Jokers
@@ -112,6 +131,52 @@ SMODS.Joker:take_ownership("trousers", {
 --#endregion
 
 --#region Uncommon Jokers
+SMODS.Joker:take_ownership("steel_joker", { config = { extra = 0.25 } })
+SMODS.Joker:take_ownership("arrowhead", { config = { extra = 60 } })
+SMODS.Joker:take_ownership("onyx_agate", { config = { extra = 9 } })
+SMODS.Joker:take_ownership("drivers_license", { rarity = 2 })
+
+local seanced = {}
+SMODS.Joker:take_ownership("seance", {
+    config = { extra = { odds = 2, poker_hand = 'Straight Flush' } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { G.GAME.probabilities.normal, card.ability.extra.odds } }
+    end,
+    calculate = function(self, card, context)
+        if context.end_of_round and context.cardarea == G.jokers and not context.game_over then
+            local found = {}
+            for _, v in ipairs(G.consumeables.cards) do
+                if (v.config.center.set == "Tarot" or v.config.center.set == "Planet") and not seanced[v] then
+                    found[#found + 1] = v
+                end
+            end
+            if #found == 0 or pseudorandom(pseudoseed('seance')) > G.GAME.probabilities.normal / card.ability.extra.odds then return end
+
+            local card = pseudorandom_element(found, pseudoseed('seance2'))
+
+            seanced[card] = true
+            G.E_MANAGER:add_event(Event({
+                trigger = 'before',
+                blocking = false,
+                delay = 0.0,
+                func = (function()
+                    card:start_dissolve()
+                    local card = create_card('Spectral', G.consumeables, nil, nil, nil, nil, nil, 'sea')
+                    card:add_to_deck()
+                    G.consumeables:emplace(card)
+                    seanced = {}
+                    return true
+                end)
+            }))
+            return {
+                message = localize('k_plus_spectral'),
+                colour = G.C.SECONDARY_SET.Spectral,
+                card = self
+            }
+        end
+        if context.joker_main then return {} end
+    end
+})
 --#endregion
 
 --#region Rare Jokers

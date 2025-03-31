@@ -43,6 +43,14 @@ return {
                     "{C:inactive}(Currently {C:red}+#4#{C:inactive} Mult and {C:chips}+#5#{} Chips)",
                 },
             },
+            j_seance = {
+                text = {
+                    "{C:green}#1# in #2#{} chance to",
+                    "replace a random held",
+                    "{C:tarot}Tarot{} or {C:planet}Planet{} card",
+                    "with a {C:spectral}Spectral{} card"
+                }
+            }
         },
         Voucher = {
             v_omen_globe = {
