@@ -97,7 +97,7 @@ SMODS.Joker:take_ownership("delayed_grat", {
     calc_dollar_bonus = function(self, card) end
 })
 
-SMODS.Joker:take_ownership("red_card", { cost = 4 })
+SMODS.Joker:take_ownership("gift", { cost = 4 })
 SMODS.Joker:take_ownership("ticket", { config = { extra = 5 } })
 SMODS.Joker:take_ownership("space", { rarity = 1 })
 SMODS.Joker:take_ownership("hiker", { rarity = 1 })
