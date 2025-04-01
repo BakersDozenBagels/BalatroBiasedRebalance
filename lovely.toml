@@ -55,3 +55,13 @@ pattern = "\\(v\\.type == 'Base' or v\\.type == 'Enhanced'\\) and G\\.GAME\\.use
 position = 'at'
 payload = 'SerenosThing.illusion(card, v.type)'
 times = 1
+
+# Common/Rare Tag tweak
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = 'self.ability.perishable = true'
+position = 'at'
+match_indent = true
+payload = 'self.ability.perishable = _perishable'
+times = 1

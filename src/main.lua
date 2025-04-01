@@ -22,3 +22,4 @@ SerenosThing = {}
 assert(SMODS.load_file('src/tweaks/consumables.lua'))()
 assert(SMODS.load_file('src/tweaks/vouchers.lua'))()
 assert(SMODS.load_file('src/tweaks/jokers.lua'))()
+assert(SMODS.load_file('src/tweaks/tags.lua'))()
