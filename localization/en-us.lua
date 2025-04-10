@@ -120,6 +120,9 @@ return {
             },
             tag_boss = {
                 text = { "Disables effect of", "next {C:attention}Boss Blind", "{s:0.8,C:inactive}(Can't be copied)" }
+            },
+            tag_juggle = {
+                text = { "{C:attention}+#1#{} hand size", "next {C:attention}#2#{} rounds" }
             }
         }
     },
