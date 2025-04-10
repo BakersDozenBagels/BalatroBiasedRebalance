@@ -65,3 +65,13 @@ position = 'at'
 match_indent = true
 payload = 'self.ability.perishable = _perishable'
 times = 1
+
+# Boss Tag tweak
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "-- TARGET: setting_blind effects"
+position = "after"
+match_indent = true
+times = 1
+payload = "SerenosThing.on_set_blind(G.GAME.blind)"

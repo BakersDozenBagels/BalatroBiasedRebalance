@@ -150,3 +150,46 @@ SMODS.Tag:take_ownership("meteor", {
         end
     end
 })
+
+function SerenosThing.on_set_blind(blind)
+    for i = 1, #G.GAME.tags do
+        G.GAME.tags[i]:apply_to_run({
+            type = 'serenosThing_set_blind',
+            blind = blind
+        })
+    end
+end
+
+SMODS.Tag:take_ownership("boss", {
+    in_pool = function()
+        return (G.GAME.round_resets.ante) % G.GAME.win_ante ~= 0
+    end,
+    apply = function(self, tag, context)
+        if context.type == 'new_blind_choice' then return true end
+
+        if not tag.triggered and context.type == 'serenosThing_set_blind' and context.blind.boss then
+            G.E_MANAGER:add_event(Event {
+                func = function()
+                    if context.blind.disabled or not context.blind.disable then
+                        tag.triggered = false
+                        return true
+                    end
+                    tag:yep(localize('ph_boss_disabled'), G.C.RED, function()
+                        return true
+                    end)
+                    context.blind:disable()
+                    play_sound('timpani')
+                    delay(0.4)
+                    return true
+                end
+            })
+            tag.triggered = true
+        end
+    end
+})
+
+SMODS.Tag:take_ownership("double", {
+    apply = function(self, tag, context)
+        if context.type == 'tag_add' and context.tag.key == 'tag_boss' then return true end
+    end
+}, true)

@@ -117,6 +117,9 @@ return {
         Tag = {
             tag_meteor = {
                 text = { "{C:planet}Upgrades{} all", "{C:attention}Poker Hands{} once" }
+            },
+            tag_boss = {
+                text = { "Disables effect of", "next {C:attention}Boss Blind", "{s:0.8,C:inactive}(Can't be copied)" }
             }
         }
     },
