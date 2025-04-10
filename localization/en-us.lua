@@ -126,6 +126,9 @@ return {
             },
             tag_garbage = {
                 text = { "{C:red}+#1#{} discards for", "the next {C:attention}#2#{} rounds" }
+            },
+            tag_economy = {
+                text = { "Doubles your money", "{C:inactive}(Max of {C:money}$#1#{C:inactive},", "{C:inactive}Min of {C:money}$#2#{C:inactive})", }
             }
         }
     },
