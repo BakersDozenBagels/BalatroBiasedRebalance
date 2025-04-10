@@ -113,6 +113,11 @@ return {
                     "the {C:tarot}Arcana{} or {C:planet}Celestial{} Packs",
                 },
             },
+        },
+        Tag = {
+            tag_meteor = {
+                text = { "{C:planet}Upgrades{} all", "{C:attention}Poker Hands{} once" }
+            }
         }
     },
     misc = {}
