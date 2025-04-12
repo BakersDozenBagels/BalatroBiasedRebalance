@@ -103,6 +103,14 @@ return {
                     "to the right of this one",
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)",
                 }
+            },
+            j_flower_pot = {
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if played",
+                    "hand contains a",
+                    "{C:diamonds}Diamond{} card, {C:clubs}Club{} card,",
+                    "{C:hearts}Heart{} card, and {C:spades}Spade{} card",
+                }
             }
         },
         Voucher = {

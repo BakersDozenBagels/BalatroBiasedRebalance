@@ -166,6 +166,37 @@ SMODS.Joker:take_ownership("bootstraps", {
         }))
     end,
 })
+
+SMODS.Joker:take_ownership("flower_pot", {
+    cost = 5,
+    rarity = 1,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local suits_l = { 'Hearts', 'Diamonds', 'Spades', 'Clubs' }
+            local suits = {}
+            local count = 0
+            for i = 1, #context.full_hand do
+                if not SMODS.has_any_suit(context.full_hand[i]) then
+                    for _, v in ipairs(suits_l) do
+                        if context.full_hand[i]:is_suit(v, true) and not suits[v] then
+                            suits[v] = true
+                            count = count + 1
+                            break
+                        end
+                    end
+                else
+                    count = count + 1
+                end
+            end
+            if count >= 4 then
+                return {
+                    message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra } },
+                    Xmult_mod = card.ability.extra
+                }
+            end
+        end
+    end
+})
 --#endregion
 
 --#region Uncommon Jokers
