@@ -342,6 +342,8 @@ SMODS.Joker:take_ownership("todo_list", {
         end
     end,
 })
+
+SMODS.Joker:take_ownership("photograph", { rarity = 2 })
 --#endregion
 
 --#region Rare Jokers
