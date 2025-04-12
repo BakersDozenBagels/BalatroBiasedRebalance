@@ -140,6 +140,15 @@ return {
                     "",
                     "{C:dark_edition}Negative{} is",
                     "{C:green}4X{} more common" }
+            },
+            b_ghost = {
+                text = {
+                    "{C:spectral}Spectral{} cards may",
+                    "appear in the shop,",
+                    "start with a {C:spectral,T:c_hex}Hex{} card,",
+                    "{C:spectral}Spectral Packs{} are",
+                    "{C:green}3X{} more common"
+                }
             }
         }
     },
