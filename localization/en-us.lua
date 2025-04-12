@@ -130,6 +130,17 @@ return {
             tag_economy = {
                 text = { "Doubles your money", "{C:inactive}(Max of {C:money}$#1#{C:inactive},", "{C:inactive}Min of {C:money}$#2#{C:inactive})", }
             }
+        },
+        Back = {
+            b_black = {
+                text = { "{C:attention}+#1#{} Joker slot",
+                    "",
+                    "{C:blue}-#2#{} hand",
+                    "every round",
+                    "",
+                    "{C:dark_edition}Negative{} is",
+                    "{C:green}4X{} more common" }
+            }
         }
     },
     misc = {}
