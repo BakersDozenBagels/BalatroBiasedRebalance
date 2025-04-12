@@ -41,3 +41,5 @@ function Game:init_game_object()
     end
     return ret
 end
+
+SMODS.Consumable:take_ownership("lovers", { config = { mod_conv = 'm_wild', max_highlighted = 2 } })

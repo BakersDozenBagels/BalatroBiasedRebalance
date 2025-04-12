@@ -150,6 +150,15 @@ return {
                     "{C:green}3X{} more common"
                 }
             }
+        },
+        Tarot = {
+            c_lovers = {
+                text = {
+                    "Enhances {C:attention}#1#{} selected",
+                    "cards into a",
+                    "{C:attention}#2#",
+                },
+            }
         }
     },
     misc = {}
