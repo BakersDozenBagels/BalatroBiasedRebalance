@@ -157,6 +157,13 @@ return {
                     "{C:spectral}Spectral Packs{} are",
                     "{C:green}3X{} more common"
                 }
+            },
+            b_serenosThing_Pink = {
+                name = "Pink Deck",
+                text = {
+                    "{C:common}Common{} Jokers are",
+                    "less common"
+                }
             }
         },
         Tarot = {

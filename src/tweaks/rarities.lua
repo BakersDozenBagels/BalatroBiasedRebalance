@@ -21,7 +21,7 @@ local function count_awakenings()
     return 0 -- TODO
 end
 local function has_pink_deck()
-    return 0 -- TODO
+    return G.GAME.selected_back.effect.center.key == 'b_serenosThing_Pink' and 1 or 0
 end
 local function count_caviar()
     return 0 -- TODO

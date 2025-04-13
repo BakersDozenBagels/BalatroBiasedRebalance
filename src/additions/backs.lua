@@ -17,14 +17,19 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ]] --
 
-SerenosThing = {}
+SMODS.Atlas {
+    key = "Backs",
+    path = "Backs.png",
+    px = 71,
+    py = 95
+}
 
-assert(SMODS.load_file('src/tweaks/consumables.lua'))()
-assert(SMODS.load_file('src/tweaks/vouchers.lua'))()
-assert(SMODS.load_file('src/tweaks/jokers.lua'))()
-assert(SMODS.load_file('src/tweaks/tags.lua'))()
-assert(SMODS.load_file('src/tweaks/backs.lua'))()
-assert(SMODS.load_file('src/tweaks/editions.lua'))()
-assert(SMODS.load_file('src/tweaks/rarities.lua'))()
-
-assert(SMODS.load_file('src/additions/backs.lua'))()
+SMODS.Back {
+    key = "Pink",
+    name = "Pink",
+    atlas = "Backs",
+    pos = {
+        x = 2,
+        y = 0
+    },
+}
