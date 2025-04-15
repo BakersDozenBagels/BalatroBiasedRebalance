@@ -120,6 +120,14 @@ return {
                     "levels it up and creates",
                     "a random {C:tarot}Tarot{} card"
                 }
+            },
+            j_serenosThing_PitifulJoker = {
+                name = "Pitiful Joker",
+                text = {
+                    "{C:red}+#1#{} Mult",
+                    "if hand is played",
+                    "with {C:money}$#2#{} or less",
+                }
             }
         },
         Voucher = {

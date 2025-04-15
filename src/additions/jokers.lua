@@ -53,7 +53,7 @@ SMODS.Joker {
                         delay = 0.0,
                         func = (function()
                             local card = create_card('Tarot', G.consumeables, nil, nil, nil, nil, nil,
-                            'j_serenosThing_Veteran')
+                                'j_serenosThing_Veteran')
                             card:add_to_deck()
                             G.consumeables:emplace(card)
                             G.GAME.consumeable_buffer = 0
@@ -71,6 +71,43 @@ SMODS.Joker {
 
         if context.end_of_round and not context.repetition and context.game_over == false and not context.blueprint then
             card.ability.extra.hands = {}
+        end
+    end
+}
+
+local function le(a, b)
+    if not Talisman then
+        return a <= b
+    end
+    return to_big(a):lte(to_big(b))
+end
+
+SMODS.Joker {
+    atlas = "Joker",
+    key = "PitifulJoker",
+    pos = {
+        x = 1,
+        y = 0
+    },
+    rarity = 1,
+    cost = 5,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = {
+        extra = {
+            mult = 10,
+            money = 10
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult, card.ability.extra.money } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main and le(G.GAME.dollars, card.ability.extra.money) then
+            return {
+                mult = card.ability.extra.mult
+            }
         end
     end
 }
