@@ -136,6 +136,11 @@ return {
                     "played Poker Hand has",
                     "been {C:red}discarded{} this round",
                 }
+            },
+            -- j_serenosThing_Jumbo
+            j_serenosThing_Caviar = {
+                name = "Caviar",
+                text = { "{C:common}Common{} Jokers", "are less common" }
             }
         },
         Voucher = {

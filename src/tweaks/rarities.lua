@@ -24,7 +24,7 @@ local function has_pink_deck()
     return G.GAME.selected_back.effect.center.key == 'b_serenosThing_Pink' and 1 or 0
 end
 local function count_caviar()
-    return 0 -- TODO
+    return #SMODS.find_card('j_serenosThing_Caviar')
 end
 
 SMODS.Rarity:take_ownership("Common", {

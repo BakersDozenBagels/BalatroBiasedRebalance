@@ -165,4 +165,19 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    atlas = "Joker",
+    key = "Caviar",
+    pos = {
+        x = 4,
+        y = 0
+    },
+    rarity = 1,
+    cost = 10,
+    blueprint_compat = false,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra_value = -4 }
+}
 --#endregion
