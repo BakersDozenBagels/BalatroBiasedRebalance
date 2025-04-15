@@ -111,4 +111,58 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    atlas = "Joker",
+    key = "Afterthought",
+    pos = {
+        x = 2,
+        y = 0
+    },
+    rarity = 1,
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = {
+        extra = {
+            chips = 125,
+            on = false
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.chips } }
+    end,
+    calculate = function(self, card, context)
+        if context.pre_discard and not context.repetition and not context.blueprint and not card.ability.extra.on then
+            local text = G.FUNCS.get_poker_hand_info(context.full_hand)
+            local highest = true
+            local play_more_than = (G.GAME.hands[text].played or 0)
+            for k, v in pairs(G.GAME.hands) do
+                if k ~= text and v.played > play_more_than and v.visible then
+                    highest = false
+                end
+            end
+            if highest then
+                card.ability.extra.on = true
+                juice_card_until(card, function() return card.ability.extra.on end, true)
+            end
+        end
+
+        if context.joker_main and card.ability.extra.on then
+            return {
+                chips = card.ability.extra.chips
+            }
+        end
+
+        if context.end_of_round and not context.repetition and context.game_over == false and not context.blueprint then
+            card.ability.extra.on = false
+        end
+    end,
+    load = function(self, card, card_table, other_card)
+        if card_table.ability.extra.on then
+            juice_card_until(card, function() return card.ability.extra.on end, true)
+        end
+    end
+}
 --#endregion

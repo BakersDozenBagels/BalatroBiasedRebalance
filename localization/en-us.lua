@@ -128,6 +128,14 @@ return {
                     "if hand is played",
                     "with {C:money}$#2#{} or less",
                 }
+            },
+            j_serenosThing_Afterthought = {
+                name = "Afterthought",
+                text = {
+                    "{C:chips}+#1#{} Chips if most",
+                    "played Poker Hand has",
+                    "been {C:red}discarded{} this round",
+                }
             }
         },
         Voucher = {
