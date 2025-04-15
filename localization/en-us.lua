@@ -111,6 +111,15 @@ return {
                     "{C:diamonds}Diamond{} card, {C:clubs}Club{} card,",
                     "{C:hearts}Heart{} card, and {C:spades}Spade{} card",
                 }
+            },
+            j_serenosThing_Veteran = {
+                name = "Veteran",
+                text = {
+                    "Playing the same {C:attention}Poker Hand",
+                    "{C:attention}three{} times in a {C:attention}round",
+                    "levels it up and creates",
+                    "a random {C:tarot}Tarot{} card"
+                }
             }
         },
         Voucher = {

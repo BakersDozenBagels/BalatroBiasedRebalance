@@ -28,3 +28,4 @@ assert(SMODS.load_file('src/tweaks/editions.lua'))()
 assert(SMODS.load_file('src/tweaks/rarities.lua'))()
 
 assert(SMODS.load_file('src/additions/backs.lua'))()
+assert(SMODS.load_file('src/additions/jokers.lua'))()
