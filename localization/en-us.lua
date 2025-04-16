@@ -148,6 +148,10 @@ return {
                     "{C:chips}+#2#{} Chips when",
                     "skipping a Blind",
                     "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips)" }
+            },
+            j_serenosThing_Jokester = {
+                name = "Jokester",
+                text = { "Earn {C:money}$#1#{} per Joker", "at end of round", "{C:inactive}(Will give {C:money}$#2#{C:inactive})" }
             }
         },
         Voucher = {

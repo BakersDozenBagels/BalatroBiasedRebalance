@@ -218,4 +218,28 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    atlas = "Joker",
+    key = "Jokester",
+    pos = {
+        x = 1,
+        y = 1
+    },
+    rarity = 1,
+    cost = 4,
+    blueprint_compat = false,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = {
+        money = 1
+    } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.money, card.ability.extra.money * #G.jokers.cards } }
+    end,
+    calc_dollar_bonus = function(self, card)
+        local bonus = card.ability.extra.money * #G.jokers.cards
+        if bonus > 0 then return bonus end
+    end
+}
 --#endregion
