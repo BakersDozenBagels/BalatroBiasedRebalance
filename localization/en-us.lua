@@ -141,6 +141,13 @@ return {
             j_serenosThing_Caviar = {
                 name = "Caviar",
                 text = { "{C:common}Common{} Jokers", "are less common" }
+            },
+            j_serenosThing_ImpatientJoker = {
+                name = "Impatient Joker",
+                text = { "Earn {C:money}$#1#{} and gain",
+                    "{C:chips}+#2#{} Chips when",
+                    "skipping a Blind",
+                    "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips)" }
             }
         },
         Voucher = {
