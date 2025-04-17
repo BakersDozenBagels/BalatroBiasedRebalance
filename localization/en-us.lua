@@ -168,7 +168,11 @@ return {
                 name = "Cinemaphile",
                 text = { "Sell this card to",
                     "add a {C:attention}Voucher{} to the shop", }
-            }
+            },
+            j_serenosThing_Trinity = {
+                name = "Trinity",
+                text = { "{X:mult,C:white}X#1#{} Mult if played hand", "contains at least {C:attention}#2#{} suits" }
+            },
         },
         Voucher = {
             v_omen_globe = {
