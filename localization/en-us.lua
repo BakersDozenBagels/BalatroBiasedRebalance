@@ -163,6 +163,11 @@ return {
                     "sell this card to",
                     "{C:planet}level up{} every {C:attention}Poker Hand",
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)", }
+            },
+            j_serenosThing_Cinemaphile = {
+                name = "Cinemaphile",
+                text = { "Sell this card to",
+                    "add a {C:attention}Voucher{} to the shop", }
             }
         },
         Voucher = {
