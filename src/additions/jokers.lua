@@ -243,3 +243,44 @@ SMODS.Joker {
     end
 }
 --#endregion
+
+--#region Uncommon Jokers
+SMODS.Joker {
+    atlas = "Joker",
+    key = "BloodyMoney",
+    pos = {
+        x = 2,
+        y = 1
+    },
+    rarity = 2,
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = 3 },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local h, d, w = 0, 0, 0
+            for k, v in pairs(context.scoring_hand) do
+                if SMODS.has_any_suit(v) then
+                    w = w + 1
+                elseif v:is_suit("Diamonds") then
+                    d = 1
+                elseif v:is_suit("Hearts") then
+                    h = 1
+                else
+                    return
+                end
+            end
+            if h + d + w >= 2 then
+                return {
+                    x_mult = card.ability.extra
+                }
+            end
+        end
+    end
+}
+--#endregion

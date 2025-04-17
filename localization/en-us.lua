@@ -152,6 +152,10 @@ return {
             j_serenosThing_Jokester = {
                 name = "Jokester",
                 text = { "Earn {C:money}$#1#{} per Joker", "at end of round", "{C:inactive}(Will give {C:money}$#2#{C:inactive})" }
+            },
+            j_serenosThing_BloodyMoney = {
+                name = "Bloody Money",
+                text = { "{X:mult,C:white}X#1#{} Mult if played hand", "contains both a {C:diamonds}Diamond{} and {C:hearts}Heart", "card and no other suits" }
             }
         },
         Voucher = {
