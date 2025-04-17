@@ -247,7 +247,7 @@ SMODS.Joker {
 --#region Uncommon Jokers
 SMODS.Joker {
     atlas = "Joker",
-    key = "BloodyMoney",
+    key = "RedSun",
     pos = {
         x = 2,
         y = 1
