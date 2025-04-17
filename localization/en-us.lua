@@ -156,6 +156,13 @@ return {
             j_serenosThing_BloodyMoney = {
                 name = "Bloody Money",
                 text = { "{X:mult,C:white}X#1#{} Mult if played hand", "contains both a {C:diamonds}Diamond{} and {C:hearts}Heart", "card and no other suits" }
+            },
+            j_serenosThing_WhiteHole = {
+                name = "White Hole",
+                text = { "After {C:attention}#1#{} rounds,",
+                    "sell this card to",
+                    "{C:planet}level up{} every {C:attention}Poker Hand",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)", }
             }
         },
         Voucher = {
