@@ -189,6 +189,13 @@ return {
                     "leveled {C:attention}#2#{} or higher",
                     "{C:inactive}Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
+            },
+            j_serenosThing_FreeLunch = {
+                name = '"Free" Lunch',
+                text = {
+                    "Costs {C:money}-$#1#",
+                    "Sells for {C:money}-$#2#"
+                }
             }
         },
         Voucher = {
