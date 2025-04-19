@@ -181,6 +181,14 @@ return {
                     "{C:attention}5{}, and {C:attention}6{} in your full deck",
                     "{C:inactive}Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
+            },
+            j_serenosThing_AlienJoker = {
+                name = "Alien Joker",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult per Poker Hand",
+                    "leveled {C:attention}#2#{} or higher",
+                    "{C:inactive}Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
+                }
             }
         },
         Voucher = {
