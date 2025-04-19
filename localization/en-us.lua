@@ -173,6 +173,15 @@ return {
                 name = "Trinity",
                 text = { "{X:mult,C:white}X#1#{} Mult if played hand", "contains at least {C:attention}#2#{} suits" }
             },
+            j_serenosThing_Snob = {
+                name = "Snob",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult,",
+                    "{X:mult,C:white}-X#2#{} Mult per {C:attention}2{}, {C:attention}3{}, {C:attention}4{},",
+                    "{C:attention}5{}, and {C:attention}6{} in your full deck",
+                    "{C:inactive}Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
+                }
+            }
         },
         Voucher = {
             v_omen_globe = {
