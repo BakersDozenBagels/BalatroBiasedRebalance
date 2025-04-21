@@ -211,6 +211,13 @@ return {
                     "{X:mult,C:white}X#1#{} Mult if you",
                     "have {C:money}$#2#{} or more"
                 }
+            },
+            j_serenosThing_Anchor = {
+                name = "The Anchor",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if current",
+                    "score has {C:chips}#2#{} Chips or more"
+                }
             }
         },
         Voucher = {
