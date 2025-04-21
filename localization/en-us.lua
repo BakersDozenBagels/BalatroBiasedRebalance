@@ -204,6 +204,13 @@ return {
                     "{C:attention}#2#{} in your full deck",
                     "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
                 }
+            },
+            j_serenosThing_Leprechaun = {
+                name = 'Leprechaun',
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if you",
+                    "have {C:money}$#2#{} or more"
+                }
             }
         },
         Voucher = {
