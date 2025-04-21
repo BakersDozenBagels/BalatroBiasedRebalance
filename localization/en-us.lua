@@ -196,6 +196,14 @@ return {
                     "Costs {C:money}-$#1#",
                     "Sells for {C:money}-$#2#"
                 }
+            },
+            j_serenosThing_Osmosis = {
+                name = 'Osmosis',
+                text = {
+                    "{C:mult}+#1#{} Mult per card above",
+                    "{C:attention}#2#{} in your full deck",
+                    "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
+                }
             }
         },
         Voucher = {
