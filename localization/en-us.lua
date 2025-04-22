@@ -218,6 +218,14 @@ return {
                     "{X:mult,C:white}X#1#{} Mult if current",
                     "score has {C:chips}#2#{} Chips or more"
                 }
+            },
+            j_serenosThing_Rivals = {
+                name = "The Rivals",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                }
             }
         },
         Voucher = {
