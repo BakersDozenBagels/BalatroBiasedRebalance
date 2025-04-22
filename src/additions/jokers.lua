@@ -235,7 +235,7 @@ SMODS.Joker {
         money = 1
     } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.money, card.ability.extra.money * #G.jokers.cards } }
+        return { vars = { card.ability.extra.money, card.ability.extra.money * (G.jokers and #G.jokers.cards or 0) } }
     end,
     calc_dollar_bonus = function(self, card)
         local bonus = card.ability.extra.money * #G.jokers.cards
@@ -561,7 +561,7 @@ SMODS.Joker {
     },
     loc_vars = function(self, info_queue, card)
         local size = G.GAME.starting_deck_size - card.ability.extra.minus
-        return { vars = { card.ability.extra.mult, size, card.ability.extra.mult * math.max(0, #G.playing_cards - size) } }
+        return { vars = { card.ability.extra.mult, size, card.ability.extra.mult * math.max(0, G.playing_cards and #G.playing_cards - size or 0) } }
     end,
     calculate = function(self, card, context)
         if context.joker_main and not context.individual then
@@ -639,7 +639,7 @@ SMODS.Joker {
         y = 5
     },
     rarity = 3,
-    cost = 6,
+    cost = 8,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -658,4 +658,51 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    atlas = "Joker",
+    key = "BluntedImpact",
+    pos = {
+        x = 1,
+        y = 5
+    },
+    rarity = 3,
+    cost = 8,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = {
+        extra = {
+            x_mult = 3,
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        local name
+        if G.GAME.serenosThing_priorHand == nil then
+            name = localize('serenosThing_none', 'text')
+        else
+            name = localize(G.GAME.serenosThing_priorHand, 'poker_hands')
+        end
+        return { vars = { card.ability.extra.x_mult, name } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main and not context.individual and G.GAME.serenosThing_priorHand and context.scoring_name ~= G.GAME.serenosThing_priorHand then
+            return { x_mult = card.ability.extra.x_mult }
+        end
+    end
+}
+
+local raw_evaluate_play_after = evaluate_play_after
+function evaluate_play_after(name, ...)
+    local ret = { raw_evaluate_play_after(name, ...) }
+    G.GAME.serenosThing_priorHand = name
+    return unpack(ret)
+end
+
+local raw_ease_round = ease_round
+function ease_round(...)
+    G.GAME.serenosThing_priorHand = nil
+    return raw_ease_round(...)
+end
+
 --#endregion

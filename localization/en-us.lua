@@ -222,9 +222,18 @@ return {
             j_serenosThing_Rivals = {
                 name = "The Rivals",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult if played",
+                    "{X:mult,C:white}X#1#{} Mult if played",
                     "hand contains",
                     "a {C:attention}#2#",
+                }
+            },
+            j_serenosThing_BluntedImpact = {
+                name = "Blunted Impact",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if played hand",
+                    "is different from the",
+                    "previous this {C:attention}round",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive})"
                 }
             }
         },
@@ -291,5 +300,9 @@ return {
             }
         }
     },
-    misc = {}
+    misc = {
+        text = {
+            serenosThing_none = "None"
+        }
+    }
 }
