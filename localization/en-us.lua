@@ -243,6 +243,15 @@ return {
                     "was sold this round,",
                     "Jokers sell for {C:money}$0"
                 }
+            },
+            j_serenosThing_MelancholicJoker = {
+                name = "Melancholic Joker",
+                text = {
+                    "After {C:attention}#1#{} rounds,",
+                    "sell this card to make",
+                    "a random Joker {C:dark_edition}Negative",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)",
+                }
             }
         },
         Voucher = {
