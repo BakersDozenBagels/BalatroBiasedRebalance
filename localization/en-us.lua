@@ -235,6 +235,14 @@ return {
                     "previous this {C:attention}round",
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive})"
                 }
+            },
+            j_serenosThing_DeathAndTaxes = {
+                name = "Death and Taxes",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if a Joker",
+                    "was sold this round,",
+                    "Jokers sell for {C:money}$0"
+                }
             }
         },
         Voucher = {
