@@ -244,6 +244,14 @@ return {
                     "Jokers sell for {C:money}$0"
                 }
             },
+            j_serenosThing_FlavourfulJoker = {
+                name = "Flavourful Joker",
+                text = {
+                    "{C:chips}+#1#{} Chips if you have",
+                    "at least {C:attention}#2#{} Jokers",
+                    "with an {C:dark_edition}Edition"
+                }
+            },
             j_serenosThing_MelancholicJoker = {
                 name = "Melancholic Joker",
                 text = {

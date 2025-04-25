@@ -775,6 +775,35 @@ SMODS.Joker {
 
 SMODS.Joker {
     atlas = "Joker",
+    key = "FlavourfulJoker",
+    pos = {
+        x = 3,
+        y = 5
+    },
+    rarity = 3,
+    cost = 9,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = { chips = 250, jokers = 3 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.chips, card.ability.extra.jokers } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local count = 0
+            for i = 1, #G.jokers.cards do
+                if G.jokers.cards[i].edition then count = count + 1 end
+            end
+            if count >= card.ability.extra.jokers then
+                return { chips = card.ability.extra.chips }
+            end
+        end
+    end,
+}
+
+SMODS.Joker {
+    atlas = "Joker",
     key = "MelancholicJoker",
     pos = {
         x = 4,
