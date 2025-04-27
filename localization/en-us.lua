@@ -260,6 +260,13 @@ return {
                     "a random Joker {C:dark_edition}Negative",
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)",
                 }
+            },
+            j_serenosThing_BrashGambler = {
+                name = "Brash Gambler",
+                text = {
+                    "{C:green}#1# in #2#{} chance for {X:mult,C:white}X#3#{} Mult,",
+                    "{C:green}#1# in #4#{} chance for {X:mult,C:white}X#5#{} Mult",
+                }
             }
         },
         Voucher = {
