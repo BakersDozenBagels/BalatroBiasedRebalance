@@ -289,6 +289,13 @@ return {
                     "{X:mult,C:white}X#1#{} Mult if played hand",
                     "contains {C:red}no{} {C:attention}Face Cards"
                 }
+            },
+            j_serenosThing_Skipper = {
+                name = "Skipper",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if a Blind",
+                    "was {C:attention}skipped{} this {C:attention}round"
+                }
             }
         },
         Voucher = {
