@@ -296,6 +296,14 @@ return {
                     "{X:mult,C:white}X#1#{} Mult if a Blind",
                     "was {C:attention}skipped{} this {C:attention}round"
                 }
+            },
+            j_serenosThing_Minstrel = {
+                name = "Minstrel",
+                text = {
+                    "{C:attention}+#1#{} discards,",
+                    "discard at most {C:attention}#2#{}",
+                    "cards at once"
+                }
             }
         },
         Voucher = {

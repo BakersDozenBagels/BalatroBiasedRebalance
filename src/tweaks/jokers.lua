@@ -247,10 +247,24 @@ SMODS.Joker:take_ownership("seance", {
     end
 })
 
+local function two_pairs(a, b)
+    local next, t, k = pairs(a)
+    local done, v = false, nil
+    return function()
+        k, v = next(t, k)
+        if k == nil and not done then
+            done = true
+            next, t, k = pairs(b)
+            k, v = next(b)
+        end
+        return k, v
+    end
+end
+
 local raw_G_FUNCS_can_discard = G.FUNCS.can_discard
 function G.FUNCS.can_discard(e)
-    for k, v in pairs(SMODS.find_card("j_troubadour")) do
-        if #G.hand.highlighted > v.ability.extra.discard_size then
+    for k, v in two_pairs(SMODS.find_card("j_troubadour"), SMODS.find_card("j_serenosThing_Minstrel")) do
+        if v.ability and #G.hand.highlighted > v.ability.extra.discard_size then
             e.config.colour = G.C.UI.BACKGROUND_INACTIVE
             e.config.button = nil
             return
