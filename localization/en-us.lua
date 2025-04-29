@@ -267,6 +267,14 @@ return {
                     "{C:green}#1# in #2#{} chance for {X:mult,C:white}X#3#{} Mult,",
                     "{C:green}#1# in #4#{} chance for {X:mult,C:white}X#5#{} Mult",
                 }
+            },
+            j_serenosThing_Bookworm = {
+                name = "Bookworm",
+                text = {
+                    "{C:chips}+#1#{} Chips if played",
+                    "{C:attention}poker hand{} is {C:red}not",
+                    "your most played"
+                }
             }
         },
         Voucher = {
