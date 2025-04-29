@@ -275,6 +275,13 @@ return {
                     "{C:attention}poker hand{} is {C:red}not",
                     "your most played"
                 }
+            },
+            j_serenosThing_Court = {
+                name = "The Court",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if played hand",
+                    "only contains {C:attention}Face Cards"
+                }
             }
         },
         Voucher = {
