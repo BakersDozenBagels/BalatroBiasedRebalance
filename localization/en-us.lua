@@ -330,6 +330,22 @@ return {
             },
             tag_economy = {
                 text = { "Doubles your money", "{C:inactive}(Max of {C:money}$#1#{C:inactive},", "{C:inactive}Min of {C:money}$#2#{C:inactive})", }
+            },
+            tag_serenosThing_Utility = {
+                name = 'Utility Tag',
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} Utility {C:joker}Jokers",
+                }
+            }
+        },
+        Booster = {
+            p_serenosThing_Utility = {
+                name = 'Utility Pack',
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} Utility {C:joker}Jokers",
+                }
             }
         },
         Back = {
@@ -370,6 +386,9 @@ return {
         }
     },
     misc = {
+        dictionary = {
+            k_booster_group_p_serenosThing_Utility = 'Utility Pack'
+        },
         text = {
             serenosThing_none = "None"
         }
