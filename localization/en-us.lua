@@ -337,6 +337,14 @@ return {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{} Utility {C:joker}Jokers",
                 }
+            },
+            tag_serenosThing_Sacrifice = {
+                name = 'Sacrifice Tag',
+                text = {
+                    "Choose {C:attention}#1#{} cards,",
+                    "{C:red}destroy{} the left {C:attention}#2#{},",
+                    "give the rest a random {C:dark_edition}edition"
+                }
             }
         },
         Booster = {
@@ -345,6 +353,14 @@ return {
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{} Utility {C:joker}Jokers",
+                }
+            },
+            p_serenosThing_Sacrifice = {
+                name = 'Sacrifice Pack',
+                text = {
+                    "Choose {C:attention}#1#{} cards,",
+                    "{C:red}destroy{} the left {C:attention}#2#{},",
+                    "give the rest a random {C:dark_edition}edition"
                 }
             }
         },
@@ -383,11 +399,22 @@ return {
                     "{C:attention}#2#",
                 },
             }
+        },
+        Spectral = {
+            c_serenosThing_Sacrifice2 = {
+                name = 'Scarifice',
+                text = {
+                    "Choose {C:attention}#1#{} cards,",
+                    "{C:red}destroy{} the left {C:attention}#2#{},",
+                    "give the rest a random {C:dark_edition}edition"
+                }
+            }
         }
     },
     misc = {
         dictionary = {
-            k_booster_group_p_serenosThing_Utility = 'Utility Pack'
+            k_booster_group_p_serenosThing_Utility = 'Utility Pack',
+            k_booster_group_p_serenosThing_Sacrifice = 'Sacrifice'
         },
         text = {
             serenosThing_none = "None"
