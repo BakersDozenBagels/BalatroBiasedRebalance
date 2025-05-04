@@ -116,8 +116,7 @@ SMODS.Joker:take_ownership("trousers", {
             card.ability.chips = card.ability.chips + card.ability.extra.chips
             return {
                 message = localize('k_upgrade_ex'),
-                colour = G.C.RED,
-                card = self
+                colour = G.C.RED
             }
         end
         if context.joker_main then
