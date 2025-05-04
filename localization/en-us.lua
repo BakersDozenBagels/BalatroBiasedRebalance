@@ -408,6 +408,13 @@ return {
                     "{C:red}destroy{} the left {C:attention}#2#{},",
                     "give the rest a random {C:dark_edition}edition"
                 }
+            },
+            c_aura = {
+                text = {
+                    "Add {C:dark_edition}Foil{}, {C:dark_edition}Holographic{},",
+                    "or {C:dark_edition}Polychrome{}, or {C:dark_edition}Negative",
+                    "to {C:attention}1{} selected card in hand",
+                }
             }
         }
     },

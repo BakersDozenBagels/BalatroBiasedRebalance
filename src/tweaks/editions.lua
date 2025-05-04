@@ -56,7 +56,7 @@ SMODS.Edition:take_ownership("polychrome", {
 })
 
 local raw_poll_edition = poll_edition
-function poll_edition(k, m, n, g)
+function poll_edition(k, m, n, ...)
     polling_playing = n
-    return raw_poll_edition(k, m, false, g)
+    return raw_poll_edition(k, m, false, ...)
 end
