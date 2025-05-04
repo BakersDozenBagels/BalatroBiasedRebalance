@@ -121,6 +121,9 @@ SMODS.Consumable {
     atlas = 'Spectrals',
     pos = { x = 1, y = 1 },
     no_collection = true,
+    loc_vars = function()
+        return { vars = { 4, 2 } }
+    end,
     in_pool = function() return false end,
     can_use = function()
         local count = #G.hand.highlighted

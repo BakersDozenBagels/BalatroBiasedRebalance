@@ -402,7 +402,7 @@ return {
         },
         Spectral = {
             c_serenosThing_Sacrifice2 = {
-                name = 'Scarifice',
+                name = 'Sacrifice',
                 text = {
                     "Choose {C:attention}#1#{} cards,",
                     "{C:red}destroy{} the left {C:attention}#2#{},",

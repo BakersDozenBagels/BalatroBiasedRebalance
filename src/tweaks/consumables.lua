@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]] --
 
 local poker_hands = {
-    ["High Card"] = { 1, 5 },
+    ["High Card"] = { 1, 10 },
     ["Pair"] = { 1, 20 },
     ["Two Pair"] = { 2, 20 },
     ["Three of a Kind"] = { 2, 30 },
