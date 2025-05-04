@@ -19,10 +19,24 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 local raw_get_weight = G.P_CENTERS.e_negative.get_weight
 SMODS.Edition:take_ownership("negative", {
+    weight = 2.4,
     get_weight = function(self)
         if G.GAME.selected_back.effect.center.key == "b_black" then
             return raw_get_weight(self) * 4
         end
         return raw_get_weight(self)
     end,
+})
+
+SMODS.Edition:take_ownership("foil", {
+    config = { extra = 75 },
+    weight = 15
+})
+
+SMODS.Edition:take_ownership("holo", {
+    weight = 14
+})
+
+SMODS.Edition:take_ownership("polychrome", {
+    weight = 3
 })
