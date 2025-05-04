@@ -45,7 +45,7 @@ times = 1
 target = 'functions/UI_definitions.lua'
 pattern = "\\(G\\.GAME\\.used_vouchers\\[\"v_illusion\"\\] and pseudorandom\\(pseudoseed\\('illusion'\\)\\) > 0\\.6\\) and 'Enhanced' or 'Base'"
 position = 'at'
-payload = 'SerenosThing.magic_trick()'
+payload = 'SerenosThing and SerenosThing.magic_trick()'
 times = 1
 
 [[patches]]
@@ -53,7 +53,7 @@ times = 1
 target = 'functions/UI_definitions.lua'
 pattern = "\\(v\\.type == 'Base' or v\\.type == 'Enhanced'\\) and G\\.GAME\\.used_vouchers\\[\"v_illusion\"\\] and pseudorandom\\(pseudoseed\\('illusion'\\)\\) > 0\\.8"
 position = 'at'
-payload = 'SerenosThing.illusion(card, v.type)'
+payload = 'SerenosThing and SerenosThing.illusion(card, v.type)'
 times = 1
 
 # Common/Rare Tag tweak
@@ -74,4 +74,4 @@ pattern = "-- TARGET: setting_blind effects"
 position = "after"
 match_indent = true
 times = 1
-payload = "SerenosThing.on_set_blind(G.GAME.blind)"
+payload = "if SerenosThing then SerenosThing.on_set_blind(G.GAME.blind) end"
