@@ -68,7 +68,7 @@ SMODS.Joker:take_ownership("droll", { config = { t_mult = 12, type = 'Flush' } }
 SMODS.Joker:take_ownership("devious", { config = { t_chips = 125, type = 'Straight' } })
 SMODS.Joker:take_ownership("crafty", { config = { t_chips = 100, type = 'Flush' } })
 
-SMODS.Joker:take_ownership("banner", { config = { extra = 30 } })
+SMODS.Joker:take_ownership("banner", { config = { extra = 40 } })
 SMODS.Joker:take_ownership("scary_face", {
     config = { extra = { chips = 30, mult = 3 } },
     loc_vars = function(self, info_queue, card)
