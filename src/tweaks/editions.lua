@@ -32,7 +32,18 @@ SMODS.Edition:take_ownership("negative", {
 })
 
 SMODS.Edition:take_ownership("foil", {
-    config = { extra = 75 },
+    config = setmetatable({ chips = 50 }, {
+            __index = function(t, k)
+                if k == 'extra' then return t.chips end
+                return rawget(t, k)
+            end,
+            __newindex = function(t, k, v)
+                if k == 'extra' then
+                    t.chips = v; return
+                end
+                rawset(t, k, v)
+            end,
+        }),
     weight = 15
 })
 
