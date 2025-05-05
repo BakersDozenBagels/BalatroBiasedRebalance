@@ -75,3 +75,13 @@ position = "after"
 match_indent = true
 times = 1
 payload = "if SerenosThing then SerenosThing.on_set_blind(G.GAME.blind) end"
+
+# Blunted Impace w/o Talisman
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "-- TARGET: effects after hand evaluation"
+position = "after"
+match_indent = true
+times = 1
+payload = "if not Talisman then G.GAME.serenosThing_priorHand = text end"
