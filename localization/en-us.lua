@@ -446,6 +446,13 @@ return {
                     "lose up to {C:money}$#1#",
                 },
             },
+            c_sigil = {
+                text = {
+                    "Converts all cards in",
+                    "hand to {C:attention}selected suit,",
+                    "lose up to {C:money}$#1#",
+                },
+            },
         }
     },
     misc = {
