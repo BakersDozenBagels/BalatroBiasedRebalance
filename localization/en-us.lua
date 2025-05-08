@@ -438,7 +438,14 @@ return {
                     "random {C:attention}Enhanced numbered",
                     "{C:attention}cards{} to your hand",
                 }
-            }
+            },
+            c_wraith = {
+                text = {
+                    "Creates a random",
+                    "{C:red}Rare{C:attention} Joker{},",
+                    "lose up to {C:money}$#1#",
+                },
+            },
         }
     },
     misc = {
