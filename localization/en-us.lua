@@ -462,6 +462,12 @@ return {
                     "{C:inactive}(Drag to rearrange)",
                 },
             },
+            c_immolate = {
+                text = {
+                    "Destroys up to",
+                    "{C:attention}#1#{} selected cards",
+                }
+            }
         }
     },
     misc = {
