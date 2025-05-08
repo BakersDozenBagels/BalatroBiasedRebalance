@@ -453,6 +453,15 @@ return {
                     "lose up to {C:money}$#1#",
                 },
             },
+            c_ouija = {
+                text = {
+                    "Select {C:attention}#1#{} cards,",
+                    "convert the {C:attention}left #2#",
+                    "into the {C:attention}rightmost{} card,",
+                    "lose up to {C:money}$#3#",
+                    "{C:inactive}(Drag to rearrange)",
+                },
+            },
         }
     },
     misc = {
