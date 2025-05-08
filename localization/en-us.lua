@@ -430,6 +430,14 @@ return {
                     "{C:attention}#2#{} random {C:attention}Enhanced face",
                     "{C:attention}cards{} to your hand",
                 }
+            },
+            c_incantation = {
+                text = {
+                    "Destroy {C:attention}#1#{} selected",
+                    "card in your hand, add {C:attention}#2#",
+                    "random {C:attention}Enhanced numbered",
+                    "{C:attention}cards{} to your hand",
+                }
             }
         }
     },
