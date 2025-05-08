@@ -467,6 +467,13 @@ return {
                     "Destroys up to",
                     "{C:attention}#1#{} selected cards",
                 }
+            },
+            c_hex = {
+                text = {
+                    "Add {C:dark_edition}Polychrome{} to a",
+                    "random {C:attention}Joker{},",
+                    "lose up to {C:money}$#1#",
+                }
             }
         }
     },
