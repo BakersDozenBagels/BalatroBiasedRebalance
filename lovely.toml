@@ -40,6 +40,7 @@ match_indent = true
 payload = 'end'
 times = 1
 
+# Magic Trick tweak
 [[patches]]
 [patches.regex]
 target = 'functions/UI_definitions.lua'
@@ -48,6 +49,7 @@ position = 'at'
 payload = 'SerenosThing and SerenosThing.magic_trick()'
 times = 1
 
+# Illusion tweak
 [[patches]]
 [patches.regex]
 target = 'functions/UI_definitions.lua'
@@ -76,7 +78,7 @@ match_indent = true
 times = 1
 payload = "if SerenosThing then SerenosThing.on_set_blind(G.GAME.blind) end"
 
-# Blunted Impace w/o Talisman
+# Blunted Impact w/o Talisman
 [[patches]]
 [patches.pattern]
 target = "functions/state_events.lua"

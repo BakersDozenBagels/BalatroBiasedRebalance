@@ -314,6 +314,13 @@ return {
                     "the {C:tarot}Arcana{} or {C:planet}Celestial{} Packs",
                 },
             },
+            v_illusion = {
+                text = {
+                    "{C:attention}Playing cards{} in shop",
+                    "always have an {C:enhanced}Enhancement{},",
+                    "{C:dark_edition}Edition{}, and/or a {C:attention}Seal{}",
+                }
+            }
         },
         Tag = {
             tag_meteor = {

@@ -265,7 +265,7 @@ SMODS.Joker {
         if context.joker_main then
             local h, d, w = 0, 0, 0
             for k, v in pairs(context.scoring_hand) do
-                if SMODS.has_any_suit(v) then
+                if SMODS.has_any_suit(v) or (v:is_suit("Diamonds") and v:is_suit("Hearts")) then
                     w = w + 1
                 elseif v:is_suit("Diamonds") then
                     d = 1
