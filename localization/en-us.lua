@@ -422,6 +422,14 @@ return {
                     "or {C:dark_edition}Polychrome{}, or {C:dark_edition}Negative",
                     "to {C:attention}1{} selected card in hand",
                 }
+            },
+            c_familiar = {
+                text = {
+                    "Destroy {C:attention}#1#{} selected",
+                    "card in your hand, add",
+                    "{C:attention}#2#{} random {C:attention}Enhanced face",
+                    "{C:attention}cards{} to your hand",
+                }
             }
         }
     },
