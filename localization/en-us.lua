@@ -410,6 +410,14 @@ return {
                     "{C:common}Common{} Jokers are",
                     "less common"
                 }
+            },
+            b_serenosThing_White = {
+                name = "White Deck",
+                text = {
+                    "When {C:attention}Small Blind{} or {C:attention}Big Blind{}",
+                    "is selected, create a {C:blue}Common{C:attention} Joker",
+                    "{C:inactive}(Must have room)",
+                }
             }
         },
         Tarot = {
