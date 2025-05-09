@@ -512,6 +512,7 @@ return {
             k_booster_group_p_serenosThing_Utility = 'Utility Pack',
             k_booster_group_p_serenosThing_Sacrifice = 'Sacrifice',
             k_booster_group_p_serenosThing_GigaStandard = 'Giga Standard Pack',
+            k_booster_group_p_serenosThing_LowStickerBuffoon = 'Mega Buffoon Pack',
         },
         text = {
             serenosThing_none = "None"
