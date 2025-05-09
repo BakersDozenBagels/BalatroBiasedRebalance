@@ -352,9 +352,15 @@ return {
                     "{C:red}destroy{} the left {C:attention}#2#{},",
                     "give the rest a random {C:dark_edition}edition"
                 }
+            },
+            tag_standard = {
+                text = {
+                    "Gives a free",
+                    "{C:attention}Giga Standard Pack",
+                }
             }
         },
-        Booster = {
+        Other = {
             p_serenosThing_Utility = {
                 name = 'Utility Pack',
                 text = {
@@ -368,6 +374,14 @@ return {
                     "Choose {C:attention}#1#{} cards,",
                     "{C:red}destroy{} the left {C:attention}#2#{},",
                     "give the rest a random {C:dark_edition}edition"
+                }
+            },
+            p_serenosThing_GigaStandard = {
+                name = 'Giga Standard Pack',
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# Playing{} cards to",
+                    "add to your deck",
                 }
             }
         },
@@ -496,7 +510,8 @@ return {
     misc = {
         dictionary = {
             k_booster_group_p_serenosThing_Utility = 'Utility Pack',
-            k_booster_group_p_serenosThing_Sacrifice = 'Sacrifice'
+            k_booster_group_p_serenosThing_Sacrifice = 'Sacrifice',
+            k_booster_group_p_serenosThing_GigaStandard = 'Giga Standard Pack',
         },
         text = {
             serenosThing_none = "None"
