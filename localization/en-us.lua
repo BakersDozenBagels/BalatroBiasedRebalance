@@ -418,6 +418,13 @@ return {
                     "is selected, create a {C:blue}Common{C:attention} Joker",
                     "{C:inactive}(Must have room)",
                 }
+            },
+            b_serenosThing_Purple = {
+                name = "Purple Deck",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult",
+                    "No repeat hand types",
+                }
             }
         },
         Tarot = {
@@ -521,6 +528,7 @@ return {
             k_booster_group_p_serenosThing_Sacrifice = 'Sacrifice',
             k_booster_group_p_serenosThing_GigaStandard = 'Giga Standard Pack',
             k_booster_group_p_serenosThing_LowStickerBuffoon = 'Mega Buffoon Pack',
+            k_serenosThing_noRepeats = 'No repeat hand types',
         },
         text = {
             serenosThing_none = "None"
