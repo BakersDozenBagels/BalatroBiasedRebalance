@@ -32,7 +32,7 @@ end
 function SerenosThing.illusion(card, type)
     if type ~= 'Base' and type ~= 'Enhanced' then return end
     local enhanced = card.config.center.key ~= 'c_base'
-    local edition = poll_edition('illusion', G.GAME.edition_rate, true)
+    local edition = poll_edition('illusion', G.GAME.edition_rate * 2, true)
     local seal = SMODS.poll_seal { key = 'illusion' }
 
     if G.GAME.used_vouchers["v_illusion"] and not enhanced then
