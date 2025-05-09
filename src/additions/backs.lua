@@ -123,3 +123,16 @@ function ease_round(...)
     G.GAME.serenosThing_hand_types = {}
     return raw_ease_round(...)
 end
+
+local raw_in_pool = G.P_BLINDS.bl_mouth.in_pool
+SMODS.Blind:take_ownership('bl_mouth', {
+    in_pool = function(...)
+        if G.GAME.selected_back and G.GAME.selected_back.effect and G.GAME.selected_back.effect.center and
+            G.GAME.selected_back.effect.center.key == 'b_serenosThing_Purple'
+        then
+            return false
+        end
+        if raw_in_pool then return raw_in_pool(...) end
+        return true
+    end
+}, true)
