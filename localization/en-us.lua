@@ -405,6 +405,14 @@ return {
                     "cards into a",
                     "{C:attention}#2#",
                 },
+            },
+            c_strength = {
+                text = {
+                    "Increases rank of",
+                    "up to {C:attention}#1#{} selected",
+                    "cards by {C:attention}1",
+                    "{C:inactive}({C:attention}#2#{C:inactive} use#3#)"
+                }
             }
         },
         Spectral = {

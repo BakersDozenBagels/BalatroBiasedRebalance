@@ -428,3 +428,18 @@ SMODS.Consumable:take_ownership('c_hex', {
         delay(0.6)
     end
 })
+
+SMODS.Consumable:take_ownership('c_strength', {
+    config = {
+        mod_conv = 'up_rank',
+        max_highlighted = 2,
+        extra = { uses = 2 }
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.max_highlighted, card.ability.extra.uses, card.ability.extra.uses == 1 and "" or "s" } }
+    end,
+    keep_on_use = function(self, card)
+        card.ability.extra.uses = card.ability.extra.uses - 1
+        return card.ability.extra.uses > 0
+    end
+})
