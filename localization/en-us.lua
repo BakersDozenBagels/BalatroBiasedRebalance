@@ -475,6 +475,14 @@ return {
                     "lose up to {C:money}$#1#",
                 }
             }
+        },
+        Stake = {
+            stake_blue = {
+                text = {
+                    "Reroll costs scale {C:money}$1{} faster",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            },
         }
     },
     misc = {
