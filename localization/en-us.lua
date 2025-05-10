@@ -304,6 +304,13 @@ return {
                     "discard at most {C:attention}#2#{}",
                     "cards at once"
                 }
+            },
+            j_serenosThing_Jumbo = {
+                name = "Jumbo",
+                text = {
+                    "{C:mult}+#1#{} Mult,",
+                    "{C:dark_edition}-#2#{} Joker slot"
+                }
             }
         },
         Voucher = {
