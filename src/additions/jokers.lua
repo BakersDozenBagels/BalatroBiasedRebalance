@@ -313,6 +313,57 @@ SMODS.Joker {
     end
 }
 
+local edition_buffer = {}
+SMODS.Joker {
+    atlas = "Joker",
+    key = "Spooky",
+    pos = {
+        x = 3,
+        y = 1
+    },
+    rarity = 2,
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = 8 },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { G.GAME.probabilities.normal, card.ability.extra } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            if pseudorandom(pseudoseed 'j_serenosThing_Spooky') < G.GAME.probabilities.normal / card.ability.extra then
+                local eligible = {}
+                for _, v in ipairs(context.scoring_hand) do
+                    if not v.edition and not edition_buffer[v] then
+                        eligible[#eligible + 1] = v
+                    end
+                end
+                if #eligible > 0 then
+                    local apply = pseudorandom_element(eligible, pseudoseed 'j_serenosThing_Spooky')
+                    local edition = poll_edition('j_serenosThing_Spooky', nil, nil, true, {
+                        { name = 'e_foil',       weight = 25 },
+                        { name = 'e_holo',       weight = 35 },
+                        { name = 'e_polychrome', weight = 15 },
+                        { name = 'e_negative',   weight = 25 },
+                    })
+                    edition_buffer[apply] = true
+                    juice_card(context.blueprint_card or card)
+                    G.E_MANAGER:add_event(Event {
+                        func = function()
+                            apply:set_edition(edition, true)
+                            edition_buffer = {}
+                            return true
+                        end
+                    })
+                    delay(0.2)
+                end
+            end
+            return {}, true
+        end
+    end
+}
+
 SMODS.Joker {
     atlas = "Joker",
     key = "WhiteHole",

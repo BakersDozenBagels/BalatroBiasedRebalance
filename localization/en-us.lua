@@ -311,6 +311,13 @@ return {
                     "{C:mult}+#1#{} Mult,",
                     "{C:dark_edition}-#2#{} Joker slot"
                 }
+            },
+            j_serenosThing_Spooky = {
+                name = "Spooky Joker",
+                text = {
+                    "{C:green}#1# in #2#{} chance to add a",
+                    "random {C:dark_edition}edition{} to a played card"
+                }
             }
         },
         Voucher = {
