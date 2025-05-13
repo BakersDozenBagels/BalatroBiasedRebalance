@@ -537,6 +537,13 @@ return {
                 text = {
                     "Create a free {C:attention}Voucher Tag{},", "lose up to {C:money}$#1#"
                 }
+            },
+            c_serenosThing_Stain = {
+                name = "Stain",
+                text = {
+                    "Add a random {C:attention}Seal", "to up to {C:attention}#1#{} selected", "playing cards,",
+                    "lose up to {C:money}$#2#"
+                }
             }
         },
         Stake = {
