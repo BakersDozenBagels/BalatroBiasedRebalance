@@ -544,6 +544,13 @@ return {
                     "Add a random {C:attention}Seal", "to up to {C:attention}#1#{} selected", "playing cards,",
                     "lose up to {C:money}$#2#"
                 }
+            },
+            c_serenosThing_Crossroads = {
+                name = "Crossroads",
+                text = {
+                    "Add a random {C:dark_edition}Edition", "to up to {C:attention}#1#{} selected", "playing cards,",
+                    "lose up to {C:money}$#2#"
+                }
             }
         },
         Stake = {
