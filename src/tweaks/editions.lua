@@ -58,5 +58,5 @@ SMODS.Edition:take_ownership("polychrome", {
 local raw_poll_edition = poll_edition
 function poll_edition(k, m, n, ...)
     polling_playing = n
-    return raw_poll_edition(k, m, false, ...)
+    return raw_poll_edition(k, m, k == "wheel_of_fortune", ...)
 end

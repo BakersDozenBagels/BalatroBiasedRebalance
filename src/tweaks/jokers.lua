@@ -126,7 +126,7 @@ SMODS.Joker:take_ownership("trousers", {
                 colour = G.C.RED
             }
         end
-        if context.joker_main then
+        if context.joker_main and (next(context.poker_hands['Two Pair']) or next(context.poker_hands['Full House'])) then
             return {
                 mult = card.ability.mult,
                 extra = { chips = card.ability.chips }
@@ -369,6 +369,7 @@ SMODS.Joker:take_ownership("red_card", {
 SMODS.Joker:take_ownership("todo_list", {
     rarity = 2,
     cost = 5,
+    perishable_compat = false,
     config = { extra = { dollars = 4, poker_hand = 'High Card', dx_mult = 0.2, played = false } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.dx_mult, localize(card.ability.to_do_poker_hand, 'poker_hands'), card.ability.x_mult } }

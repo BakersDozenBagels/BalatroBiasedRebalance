@@ -326,7 +326,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = 8 },
+    config = { extra = 6 },
     loc_vars = function(self, info_queue, card)
         return { vars = { G.GAME.probabilities.normal, card.ability.extra } }
     end,

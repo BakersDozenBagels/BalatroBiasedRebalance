@@ -21,17 +21,23 @@ local no_debuff = {
     bl_goad = true,
     bl_head = true,
     bl_club = true,
-    bl_widow = true,
+    bl_window = true,
 }
 
-local raw_calculate = G.P_CENTERS.m_wild.calculate
-SMODS.Enhancement:take_ownership("m_wild", {
-    calculate = function(self, card, context)
-        if context.ignore_debuff and context.debuff_card == card and no_debuff[G.GAME.blind.config.blind.key] then
-            return { prevent_debuff = true }
-        end
-        if raw_calculate then
-            return raw_calculate(self, card, context)
-        end
+SMODS.current_mod.set_debuff = function(card)
+    if card.config.center.key == 'm_wild' and no_debuff[G.GAME.blind.config.blind.key] then
+        return 'prevent_debuff'
     end
-})
+end
+
+-- local raw_calculate = G.P_CENTERS.m_wild.calculate
+-- SMODS.Enhancement:take_ownership("m_wild", {
+--     calculate = function(self, card, context)
+--         if context.ignore_debuff and context.debuff_card == card and no_debuff[G.GAME.blind.config.blind.key] then
+--             return { prevent_debuff = true }
+--         end
+--         if raw_calculate then
+--             return raw_calculate(self, card, context)
+--         end
+--     end
+-- })
