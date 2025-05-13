@@ -70,6 +70,7 @@ SMODS.Consumable {
         info_queue[#info_queue + 1] = G.P_TAGS.tag_voucher
         return { vars = { card.ability.extra.pay } }
     end,
+    can_use = function(self, card) return true end,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
             func = function()
