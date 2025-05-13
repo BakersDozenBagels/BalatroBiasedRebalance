@@ -525,6 +525,12 @@ return {
                     "random {C:attention}Joker{},",
                     "lose up to {C:money}$#1#",
                 }
+            },
+            c_serenosThing_Conjuration = {
+                name = "Conjuration",
+                text = {
+                    "Create a free", "{C:attention}Double Tag"
+                }
             }
         },
         Stake = {
