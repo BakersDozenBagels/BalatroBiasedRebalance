@@ -531,6 +531,12 @@ return {
                 text = {
                     "Create a free", "{C:attention}Double Tag"
                 }
+            },
+            c_serenosThing_Phantom = {
+                name = "Phantom",
+                text = {
+                    "Create a free {C:attention}Voucher Tag{},", "lose up to {C:money}$#1#"
+                }
             }
         },
         Stake = {
