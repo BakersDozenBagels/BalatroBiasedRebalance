@@ -557,6 +557,12 @@ return {
                 text = {
                     "Reduce the odds of", "finding {C:common}Common{} Jokers"
                 }
+            },
+            c_serenosThing_Sacrifice = {
+                name = "Sacrifice",
+                text = {
+                    "{C:red}Destroys{} leftmost Joker,", "earn {C:money}$#1#"
+                }
             }
         },
         Stake = {
