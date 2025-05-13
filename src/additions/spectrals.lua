@@ -43,6 +43,7 @@ SMODS.Consumable {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_TAGS.tag_double
     end,
+    can_use = function(self, card) return true end,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
             func = function()
@@ -208,5 +209,20 @@ SMODS.Consumable {
                 return true
             end
         }))
+    end
+}
+
+SMODS.Consumable {
+    key = 'Awakening',
+    set = 'Spectral',
+    atlas = "Spectrals",
+    pos = {
+        x = 4,
+        y = 0
+    },
+    cost = 4,
+    can_use = function(self, card) return true end,
+    use = function(self, card, area, copier)
+        G.GAME.serenosThing_awakening = (G.GAME.serenosThing_awakening or 0) + 1
     end
 }

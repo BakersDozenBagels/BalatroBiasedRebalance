@@ -551,6 +551,12 @@ return {
                     "Add a random {C:dark_edition}Edition", "to up to {C:attention}#1#{} selected", "playing cards,",
                     "lose up to {C:money}$#2#"
                 }
+            },
+            c_serenosThing_Awakening = {
+                name = "Awakening",
+                text = {
+                    "Reduce the odds of", "finding {C:common}Common{} Jokers"
+                }
             }
         },
         Stake = {

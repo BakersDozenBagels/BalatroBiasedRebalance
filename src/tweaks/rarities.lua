@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]] --
 
 local function count_awakenings()
-    return 0 -- TODO
+    return G.GAME.serenosThing_awakening or 0
 end
 local function has_pink_deck()
     return G.GAME.selected_back.effect.center.key == 'b_serenosThing_Pink' and 1 or 0
