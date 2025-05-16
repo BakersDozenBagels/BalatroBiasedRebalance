@@ -318,6 +318,12 @@ return {
                     "add a random {C:dark_edition}edition{}",
                     "to a random played card"
                 }
+            },
+            j_biasedBalance_Peafowl = {
+                name = "Peafowl",
+                text = {
+                    "{C:attention}Enhancements{} are", "{C:attention}#1#%{} stronger"
+                }
             }
         },
         Voucher = {
@@ -579,6 +585,11 @@ return {
                     "{s:0.8}Applies all previous Stakes",
                 },
             },
+        },
+        Enhanced = {
+            m_bonus = {
+                text = { "{C:chips}#1#{} extra chips" }
+            }
         }
     },
     misc = {
