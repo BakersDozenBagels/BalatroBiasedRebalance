@@ -21,7 +21,7 @@ local polling_playing = false
 
 local raw_get_weight = G.P_CENTERS.e_negative.get_weight
 SMODS.Edition:take_ownership("negative", {
-    weight = 2.4,
+    weight = .4,
     get_weight = function(self)
         local mul = polling_playing and 7 or 1
         if G.GAME.selected_back.effect.center.key == "b_black" then
@@ -31,28 +31,43 @@ SMODS.Edition:take_ownership("negative", {
     end,
 })
 
+local raw_get_weight = G.P_CENTERS.e_foil.get_weight
 SMODS.Edition:take_ownership("foil", {
     config = setmetatable({ chips = 50 }, {
-            __index = function(t, k)
-                if k == 'extra' then return t.chips end
-                return rawget(t, k)
-            end,
-            __newindex = function(t, k, v)
-                if k == 'extra' then
-                    t.chips = v; return
-                end
-                rawset(t, k, v)
-            end,
-        }),
-    weight = 15
+        __index = function(t, k)
+            if k == 'extra' then return t.chips end
+            return rawget(t, k)
+        end,
+        __newindex = function(t, k, v)
+            if k == 'extra' then
+                t.chips = v; return
+            end
+            rawset(t, k, v)
+        end,
+    }),
+    weight = 1.75,
+    get_weight = function(self)
+        local mul = polling_playing and 2 or 1
+        return raw_get_weight(self) * mul
+    end,
 })
 
+local raw_get_weight = G.P_CENTERS.e_holo.get_weight
 SMODS.Edition:take_ownership("holo", {
-    weight = 14
+    weight = 1.75,
+    get_weight = function(self)
+        local mul = polling_playing and 2 or 1
+        return raw_get_weight(self) * mul
+    end,
 })
 
+local raw_get_weight = G.P_CENTERS.e_polychrome.get_weight
 SMODS.Edition:take_ownership("polychrome", {
-    weight = 3
+    weight = .5,
+    get_weight = function(self)
+        local mul = polling_playing and 2.8 or 1
+        return raw_get_weight(self) * mul
+    end,
 })
 
 local raw_poll_edition = poll_edition
