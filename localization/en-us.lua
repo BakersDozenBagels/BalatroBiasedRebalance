@@ -45,10 +45,10 @@ return {
             },
             j_seance = {
                 text = {
-                    "{C:green}#1# in #2#{} chance to",
-                    "replace a random held",
-                    "{C:tarot}Tarot{} or {C:planet}Planet{} card",
-                    "with a {C:spectral}Spectral{} card"
+                    "Replace a random held",
+                    "{C:tarot}Tarot{} card with",
+                    "a {C:spectral}Spectral{} card",
+                    "at end of round"
                 }
             },
             j_troubadour = {
@@ -247,8 +247,7 @@ return {
             j_serenosThing_FlavourfulJoker = {
                 name = "Flavourful Joker",
                 text = {
-                    "{C:chips}+#1#{} Chips if you have",
-                    "at least {C:attention}#2#{} Jokers",
+                    "{C:chips}+#1#{} Chips per Joker",
                     "with an {C:dark_edition}Edition"
                 }
             },
@@ -315,8 +314,9 @@ return {
             j_serenosThing_Spooky = {
                 name = "Spooky Joker",
                 text = {
-                    "{C:green}#1# in #2#{} chance to add a",
-                    "random {C:dark_edition}edition{} to a played card"
+                    "{C:green}#1# in #2#{} chance to",
+                    "add a random {C:dark_edition}edition{}",
+                    "to a random played card"
                 }
             }
         },

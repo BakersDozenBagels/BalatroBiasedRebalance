@@ -25,55 +25,55 @@ SMODS.Atlas {
 }
 
 --#region Common Jokers
-SMODS.Joker {
-    atlas = "Joker",
-    key = "Veteran",
-    pos = {
-        x = 0,
-        y = 0
-    },
-    rarity = 1,
-    cost = 4,
-    blueprint_compat = false,
-    eternal_compat = true,
-    perishable_compat = true,
-    config = {
-        extra = {
-            hands = {}
-        }
-    },
-    calculate = function(self, card, context)
-        if context.before and context.cardarea == G.jokers and not context.retrigger_joker and not context.blueprint then
-            card.ability.extra.hands[context.scoring_name] = (card.ability.extra.hands[context.scoring_name] or 0) + 1
-            if card.ability.extra.hands[context.scoring_name] == 3 then
-                if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-                    G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-                    G.E_MANAGER:add_event(Event({
-                        trigger = 'before',
-                        delay = 0.0,
-                        func = (function()
-                            local card = create_card('Tarot', G.consumeables, nil, nil, nil, nil, nil,
-                                'j_serenosThing_Veteran')
-                            card:add_to_deck()
-                            G.consumeables:emplace(card)
-                            G.GAME.consumeable_buffer = 0
-                            return true
-                        end)
-                    }))
-                end
-                return {
-                    card = card,
-                    level_up = true,
-                    message = localize('k_level_up_ex')
-                }
-            end
-        end
+-- SMODS.Joker {
+--     atlas = "Joker",
+--     key = "Veteran",
+--     pos = {
+--         x = 0,
+--         y = 0
+--     },
+--     rarity = 1,
+--     cost = 4,
+--     blueprint_compat = false,
+--     eternal_compat = true,
+--     perishable_compat = true,
+--     config = {
+--         extra = {
+--             hands = {}
+--         }
+--     },
+--     calculate = function(self, card, context)
+--         if context.before and context.cardarea == G.jokers and not context.retrigger_joker and not context.blueprint then
+--             card.ability.extra.hands[context.scoring_name] = (card.ability.extra.hands[context.scoring_name] or 0) + 1
+--             if card.ability.extra.hands[context.scoring_name] == 3 then
+--                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+--                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+--                     G.E_MANAGER:add_event(Event({
+--                         trigger = 'before',
+--                         delay = 0.0,
+--                         func = (function()
+--                             local card = create_card('Tarot', G.consumeables, nil, nil, nil, nil, nil,
+--                                 'j_serenosThing_Veteran')
+--                             card:add_to_deck()
+--                             G.consumeables:emplace(card)
+--                             G.GAME.consumeable_buffer = 0
+--                             return true
+--                         end)
+--                     }))
+--                 end
+--                 return {
+--                     card = card,
+--                     level_up = true,
+--                     message = localize('k_level_up_ex')
+--                 }
+--             end
+--         end
 
-        if context.end_of_round and not context.repetition and context.game_over == false and not context.blueprint then
-            card.ability.extra.hands = {}
-        end
-    end
-}
+--         if context.end_of_round and not context.repetition and context.game_over == false and not context.blueprint then
+--             card.ability.extra.hands = {}
+--         end
+--     end
+-- }
 
 local function le(a, b)
     if not Talisman then
@@ -865,9 +865,9 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { chips = 250, jokers = 3 } },
+    config = { extra = { chips = 75 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.chips, card.ability.extra.jokers } }
+        return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -875,8 +875,8 @@ SMODS.Joker {
             for i = 1, #G.jokers.cards do
                 if G.jokers.cards[i].edition then count = count + 1 end
             end
-            if count >= card.ability.extra.jokers then
-                return { chips = card.ability.extra.chips }
+            if count >= 0 then
+                return { chips = card.ability.extra.chips * count }
             end
         end
     end,
@@ -1069,7 +1069,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { xmult = 2.5 } },
+    config = { extra = { xmult = 3 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,

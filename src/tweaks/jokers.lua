@@ -136,7 +136,7 @@ SMODS.Joker:take_ownership("trousers", {
 })
 
 SMODS.Joker:take_ownership("bootstraps", {
-    cost = 5,
+    cost = 6,
     rarity = 1,
     config = { extra = { mult = 18, dollars = 1 } },
     loc_vars = function(self, info_queue, card)
@@ -221,11 +221,11 @@ SMODS.Joker:take_ownership("seance", {
         if context.end_of_round and context.cardarea == G.jokers and not context.game_over then
             local found = {}
             for _, v in ipairs(G.consumeables.cards) do
-                if (v.config.center.set == "Tarot" or v.config.center.set == "Planet") and not seanced[v] then
+                if (v.config.center.set == "Tarot") and not seanced[v] then
                     found[#found + 1] = v
                 end
             end
-            if #found == 0 or pseudorandom(pseudoseed('seance')) > G.GAME.probabilities.normal / card.ability.extra.odds then return end
+            -- if #found == 0 or pseudorandom(pseudoseed('seance')) > G.GAME.probabilities.normal / card.ability.extra.odds then return end
 
             local card = pseudorandom_element(found, pseudoseed('seance2'))
 

@@ -53,9 +53,10 @@ SMODS.ObjectType {
         j_serenosThing_UpsideDown = true,
         j_serenosThing_InTheHole = true,
         j_serenosThing_Chimera = true,
-        j_serenosThing_Caviar = true,
         j_serenosThing_Minstrel = true,
         j_serenosThing_Poacher = true,
+        j_burnt = true,
+        j_astronomer = true,
     },
     inject = function(self)
         SMODS.ObjectType.inject(self)
