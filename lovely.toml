@@ -97,3 +97,22 @@ position = "after"
 match_indent = true
 times = 1
 payload = "* (SerenosThing and SerenosThing.reroll_scale() or 1)"
+
+# Jumbo
+[[patches]]
+[patches.regex]
+target = "functions/button_callbacks.lua"
+pattern = "card\\.edition and card\\.edition\\.card_limit or 0"
+position = "at"
+root_capture = "0"
+times = 4
+payload = "(card.edition and card.edition.card_limit or 0) + (card.config.center.key == 'j_serenosThing_Jumbo' and -1 or 0)"
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS _ "src/utils.lua"]'
+pattern = "card\\.edition and card\\.edition\\.card_limit or 0"
+position = "at"
+root_capture = "0"
+times = 1
+payload = "(card.edition and card.edition.card_limit or 0) + (card.config.center.key == 'j_serenosThing_Jumbo' and -1 or 0)"
