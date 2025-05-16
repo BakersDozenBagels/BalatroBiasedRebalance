@@ -563,6 +563,13 @@ return {
                 text = {
                     "{C:red}Destroys{} leftmost Joker,", "earn {C:money}$#1#"
                 }
+            },
+            c_ankh = {
+                text = {
+                    "Create a copy of",
+                    "leftmost {C:attention}Joker{}, destroy",
+                    "all other Jokers",
+                }
             }
         },
         Stake = {
