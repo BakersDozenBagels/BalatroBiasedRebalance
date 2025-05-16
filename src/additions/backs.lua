@@ -103,16 +103,16 @@ SMODS.Back {
 local raw_Blind_debuff_hand = Blind.debuff_hand
 function Blind:debuff_hand(cards, hand, handname, check)
     if G.GAME.selected_back and G.GAME.selected_back.effect and G.GAME.selected_back.effect.center and
-        G.GAME.selected_back.effect.center.key == 'b_serenosThing_Purple'
+        G.GAME.selected_back.effect.center.key == 'b_biasedBalance_Purple'
     then
-        G.GAME.serenosThing_hand_types = G.GAME.serenosThing_hand_types or {}
-        if G.GAME.serenosThing_hand_types[handname] then
-            SMODS.debuff_text = localize 'k_serenosThing_noRepeats'
+        G.GAME.biasedBalance_hand_types = G.GAME.biasedBalance_hand_types or {}
+        if G.GAME.biasedBalance_hand_types[handname] then
+            SMODS.debuff_text = localize 'k_biasedBalance_noRepeats'
             SMODS.hand_debuff_source = nil
             return true
         end
         if not check then
-            G.GAME.serenosThing_hand_types[handname] = true
+            G.GAME.biasedBalance_hand_types[handname] = true
         end
     end
     return raw_Blind_debuff_hand(self, cards, hand, handname, check)
@@ -120,7 +120,7 @@ end
 
 local raw_ease_round = ease_round
 function ease_round(...)
-    G.GAME.serenosThing_hand_types = {}
+    G.GAME.biasedBalance_hand_types = {}
     return raw_ease_round(...)
 end
 
@@ -128,7 +128,7 @@ local raw_in_pool = G.P_BLINDS.bl_mouth.in_pool
 SMODS.Blind:take_ownership('bl_mouth', {
     in_pool = function(...)
         if G.GAME.selected_back and G.GAME.selected_back.effect and G.GAME.selected_back.effect.center and
-            G.GAME.selected_back.effect.center.key == 'b_serenosThing_Purple'
+            G.GAME.selected_back.effect.center.key == 'b_biasedBalance_Purple'
         then
             return false
         end

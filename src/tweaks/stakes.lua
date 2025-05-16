@@ -17,7 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ]] --
 
-function SerenosThing.reroll_scale()
+function BiasedBalance.reroll_scale()
     return G.GAME.modifiers.reroll_scale or 1
 end
 

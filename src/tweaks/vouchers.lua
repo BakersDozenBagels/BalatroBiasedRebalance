@@ -24,12 +24,12 @@ SMODS.Voucher:take_ownership('blank', {
 }, true)
 
 -- Referenced in lovely.toml
-function SerenosThing.magic_trick()
+function BiasedBalance.magic_trick()
     return (G.GAME.used_vouchers["v_magic_trick"] and pseudorandom(pseudoseed('illusion')) > (G.GAME.used_vouchers["v_illusion"] and 0.4 or 0.6)) and
         'Enhanced' or 'Base'
 end
 
-function SerenosThing.illusion(card, type)
+function BiasedBalance.illusion(card, type)
     if type ~= 'Base' and type ~= 'Enhanced' then return end
     local enhanced = card.config.center.key ~= 'c_base'
     local edition = poll_edition('illusion', G.GAME.edition_rate * 2, true)

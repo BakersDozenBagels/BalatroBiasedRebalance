@@ -25,7 +25,7 @@ SMODS.Atlas {
 }
 
 SMODS.ObjectType {
-    key = 'serenosThing_UtilityJoker',
+    key = 'biasedBalance_UtilityJoker',
     default = 'j_chaos',
     cards = {
         j_chaos = true,
@@ -48,13 +48,13 @@ SMODS.ObjectType {
         j_hack = true,
         j_selzer = true,
         j_sock_and_buskin = true,
-        j_serenosThing_Spooky = true,
-        j_serenosThing_Peafowl = true,
-        j_serenosThing_UpsideDown = true,
-        j_serenosThing_InTheHole = true,
-        j_serenosThing_Chimera = true,
-        j_serenosThing_Minstrel = true,
-        j_serenosThing_Poacher = true,
+        j_biasedBalance_Spooky = true,
+        j_biasedBalance_Peafowl = true,
+        j_biasedBalance_UpsideDown = true,
+        j_biasedBalance_InTheHole = true,
+        j_biasedBalance_Chimera = true,
+        j_biasedBalance_Minstrel = true,
+        j_biasedBalance_Poacher = true,
         j_burnt = true,
         j_astronomer = true,
     },
@@ -71,7 +71,7 @@ SMODS.ObjectType {
     end
 }
 
--- F.ipairs(G.P_CENTER_POOLS.serenosThing_UtilityJoker):map(function(x) return x.key end):conjoin(', ')
+-- F.ipairs(G.P_CENTER_POOLS.biasedBalance_UtilityJoker):map(function(x) return x.key end):conjoin(', ')
 
 local b_ut = SMODS.Booster {
     key = 'Utility',
@@ -85,7 +85,7 @@ local b_ut = SMODS.Booster {
     draw_hand = false,
     select_card = 'jokers',
     create_card = function(self, card, i)
-        return { set = 'serenosThing_UtilityJoker' }
+        return { set = 'biasedBalance_UtilityJoker' }
     end,
     in_pool = function() return false end
 }
@@ -178,7 +178,7 @@ local b_sac = SMODS.Booster {
         return { vars = { 4, 2 } }
     end,
     create_card = function(self, card, i)
-        return { key = 'c_serenosThing_Sacrifice2' }
+        return { key = 'c_biasedBalance_Sacrifice2' }
     end,
     in_pool = function() return false end
 }

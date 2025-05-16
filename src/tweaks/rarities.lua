@@ -18,13 +18,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]] --
 
 local function count_awakenings()
-    return G.GAME.serenosThing_awakening or 0
+    return G.GAME.biasedBalance_awakening or 0
 end
 local function has_pink_deck()
-    return G.GAME.selected_back.effect.center.key == 'b_serenosThing_Pink' and 1 or 0
+    return G.GAME.selected_back.effect.center.key == 'b_biasedBalance_Pink' and 1 or 0
 end
 local function count_caviar()
-    return #SMODS.find_card('j_serenosThing_Caviar')
+    return #SMODS.find_card('j_biasedBalance_Caviar')
 end
 
 SMODS.Rarity:take_ownership("Common", {

@@ -224,7 +224,7 @@ SMODS.Consumable {
     cost = 4,
     can_use = function(self, card) return true end,
     use = function(self, card, area, copier)
-        G.GAME.serenosThing_awakening = (G.GAME.serenosThing_awakening or 0) + 1
+        G.GAME.biasedBalance_awakening = (G.GAME.biasedBalance_awakening or 0) + 1
     end
 }
 

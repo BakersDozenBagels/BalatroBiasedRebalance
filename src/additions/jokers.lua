@@ -53,7 +53,7 @@ SMODS.Atlas {
 --                         delay = 0.0,
 --                         func = (function()
 --                             local card = create_card('Tarot', G.consumeables, nil, nil, nil, nil, nil,
---                                 'j_serenosThing_Veteran')
+--                                 'j_biasedBalance_Veteran')
 --                             card:add_to_deck()
 --                             G.consumeables:emplace(card)
 --                             G.GAME.consumeable_buffer = 0
@@ -332,7 +332,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            if pseudorandom(pseudoseed 'j_serenosThing_Spooky') < G.GAME.probabilities.normal / card.ability.extra then
+            if pseudorandom(pseudoseed 'j_biasedBalance_Spooky') < G.GAME.probabilities.normal / card.ability.extra then
                 local eligible = {}
                 for _, v in ipairs(context.scoring_hand) do
                     if not v.edition and not edition_buffer[v] then
@@ -340,8 +340,8 @@ SMODS.Joker {
                     end
                 end
                 if #eligible > 0 then
-                    local apply = pseudorandom_element(eligible, pseudoseed 'j_serenosThing_Spooky')
-                    local edition = poll_edition('j_serenosThing_Spooky', nil, nil, true, {
+                    local apply = pseudorandom_element(eligible, pseudoseed 'j_biasedBalance_Spooky')
+                    local edition = poll_edition('j_biasedBalance_Spooky', nil, nil, true, {
                         { name = 'e_foil',       weight = 25 },
                         { name = 'e_holo',       weight = 35 },
                         { name = 'e_polychrome', weight = 15 },
@@ -612,7 +612,7 @@ SMODS.Joker {
 
 local raw_Card_set_cost = Card.set_cost
 function Card:set_cost(...)
-    if self.config.center.key == 'j_serenosThing_FreeLunch' then
+    if self.config.center.key == 'j_biasedBalance_FreeLunch' then
         self.sell_cost = -35
         self.cost = -30
         self.sell_cost_label = self.facing == 'back' and '?' or self.sell_cost
@@ -621,7 +621,7 @@ function Card:set_cost(...)
 
     local ret = { raw_Card_set_cost(self, ...) }
 
-    if self.config.center.set == 'Joker' and next(SMODS.find_card 'j_serenosThing_DeathAndTaxes') then
+    if self.config.center.set == 'Joker' and next(SMODS.find_card 'j_biasedBalance_DeathAndTaxes') then
         self.sell_cost = 0
         self.sell_cost_label = self.facing == 'back' and '?' or self.sell_cost
     end
@@ -766,15 +766,15 @@ SMODS.Joker {
     },
     loc_vars = function(self, info_queue, card)
         local name
-        if G.GAME.serenosThing_priorHand == nil then
-            name = localize('serenosThing_none', 'text')
+        if G.GAME.biasedBalance_priorHand == nil then
+            name = localize('biasedBalance_none', 'text')
         else
-            name = localize(G.GAME.serenosThing_priorHand, 'poker_hands')
+            name = localize(G.GAME.biasedBalance_priorHand, 'poker_hands')
         end
         return { vars = { card.ability.extra.x_mult, name } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and not context.individual and G.GAME.serenosThing_priorHand and context.scoring_name ~= G.GAME.serenosThing_priorHand then
+        if context.joker_main and not context.individual and G.GAME.biasedBalance_priorHand and context.scoring_name ~= G.GAME.biasedBalance_priorHand then
             return { x_mult = card.ability.extra.x_mult }
         end
     end
@@ -783,13 +783,13 @@ SMODS.Joker {
 local raw_evaluate_play_after = evaluate_play_after
 function evaluate_play_after(name, ...)
     local ret = { raw_evaluate_play_after(name, ...) }
-    G.GAME.serenosThing_priorHand = name
+    G.GAME.biasedBalance_priorHand = name
     return unpack(ret)
 end
 
 local raw_ease_round = ease_round
 function ease_round(...)
-    G.GAME.serenosThing_priorHand = nil
+    G.GAME.biasedBalance_priorHand = nil
     return raw_ease_round(...)
 end
 
@@ -957,12 +957,12 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.joker_main then
             local res = nil
-            if pseudorandom('j_serenosThing_BrashGambler') * card.ability.extra.odds2 < G.GAME.probabilities.normal then
+            if pseudorandom('j_biasedBalance_BrashGambler') * card.ability.extra.odds2 < G.GAME.probabilities.normal then
                 res = {
                     x_mult = card.ability.extra.mult2
                 }
             end
-            if pseudorandom('j_serenosThing_BrashGambler') * card.ability.extra.odds1 < G.GAME.probabilities.normal then
+            if pseudorandom('j_biasedBalance_BrashGambler') * card.ability.extra.odds1 < G.GAME.probabilities.normal then
                 res = {
                     x_mult = card.ability.extra.mult1,
                     extra = res

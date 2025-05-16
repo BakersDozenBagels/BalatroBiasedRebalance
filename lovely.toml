@@ -46,7 +46,7 @@ times = 1
 target = 'functions/UI_definitions.lua'
 pattern = "\\(G\\.GAME\\.used_vouchers\\[\"v_illusion\"\\] and pseudorandom\\(pseudoseed\\('illusion'\\)\\) > 0\\.6\\) and 'Enhanced' or 'Base'"
 position = 'at'
-payload = 'SerenosThing and SerenosThing.magic_trick()'
+payload = 'BiasedBalance and BiasedBalance.magic_trick()'
 times = 1
 
 # Illusion tweak
@@ -55,7 +55,7 @@ times = 1
 target = 'functions/UI_definitions.lua'
 pattern = "\\(v\\.type == 'Base' or v\\.type == 'Enhanced'\\) and G\\.GAME\\.used_vouchers\\[\"v_illusion\"\\] and pseudorandom\\(pseudoseed\\('illusion'\\)\\) > 0\\.8"
 position = 'at'
-payload = 'SerenosThing and SerenosThing.illusion(card, v.type)'
+payload = 'BiasedBalance and BiasedBalance.illusion(card, v.type)'
 times = 1
 
 # Common/Rare Tag tweak
@@ -76,7 +76,7 @@ pattern = "-- TARGET: setting_blind effects"
 position = "after"
 match_indent = true
 times = 1
-payload = "if SerenosThing then SerenosThing.on_set_blind(G.GAME.blind) end"
+payload = "if BiasedBalance then BiasedBalance.on_set_blind(G.GAME.blind) end"
 
 # Blunted Impact w/o Talisman
 [[patches]]
@@ -86,7 +86,7 @@ pattern = "-- TARGET: effects after hand evaluation"
 position = "after"
 match_indent = true
 times = 1
-payload = "if not Talisman then G.GAME.serenosThing_priorHand = text end"
+payload = "if not Talisman then G.GAME.biasedBalance_priorHand = text end"
 
 # Blue Stake Tweak
 [[patches]]
@@ -96,7 +96,7 @@ pattern = "G.GAME.current_round.reroll_cost = (G.GAME.round_resets.temp_reroll_c
 position = "after"
 match_indent = true
 times = 1
-payload = "* (SerenosThing and SerenosThing.reroll_scale() or 1)"
+payload = "* (BiasedBalance and BiasedBalance.reroll_scale() or 1)"
 
 # Jumbo
 [[patches]]
@@ -106,7 +106,7 @@ pattern = "card\\.edition and card\\.edition\\.card_limit or 0"
 position = "at"
 root_capture = "0"
 times = 4
-payload = "(card.edition and card.edition.card_limit or 0) + (card.config.center.key == 'j_serenosThing_Jumbo' and -1 or 0)"
+payload = "(card.edition and card.edition.card_limit or 0) + (card.config.center.key == 'j_biasedBalance_Jumbo' and -1 or 0)"
 
 [[patches]]
 [patches.regex]
@@ -115,4 +115,4 @@ pattern = "card\\.edition and card\\.edition\\.card_limit or 0"
 position = "at"
 root_capture = "0"
 times = 1
-payload = "(card.edition and card.edition.card_limit or 0) + (card.config.center.key == 'j_serenosThing_Jumbo' and -1 or 0)"
+payload = "(card.edition and card.edition.card_limit or 0) + (card.config.center.key == 'j_biasedBalance_Jumbo' and -1 or 0)"

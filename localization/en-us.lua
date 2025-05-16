@@ -112,7 +112,7 @@ return {
                     "{C:hearts}Heart{} card, and {C:spades}Spade{} card",
                 }
             },
-            j_serenosThing_Veteran = {
+            j_biasedBalance_Veteran = {
                 name = "Veteran",
                 text = {
                     "Playing the same {C:attention}Poker Hand",
@@ -121,7 +121,7 @@ return {
                     "a random {C:tarot}Tarot{} card"
                 }
             },
-            j_serenosThing_PitifulJoker = {
+            j_biasedBalance_PitifulJoker = {
                 name = "Pitiful Joker",
                 text = {
                     "{C:red}+#1#{} Mult",
@@ -129,7 +129,7 @@ return {
                     "with {C:money}$#2#{} or less",
                 }
             },
-            j_serenosThing_Afterthought = {
+            j_biasedBalance_Afterthought = {
                 name = "Afterthought",
                 text = {
                     "{C:chips}+#1#{} Chips if most",
@@ -137,43 +137,43 @@ return {
                     "been {C:red}discarded{} this round",
                 }
             },
-            -- j_serenosThing_Jumbo
-            j_serenosThing_Caviar = {
+            -- j_biasedBalance_Jumbo
+            j_biasedBalance_Caviar = {
                 name = "Caviar",
                 text = { "{C:common}Common{} Jokers", "are less common" }
             },
-            j_serenosThing_ImpatientJoker = {
+            j_biasedBalance_ImpatientJoker = {
                 name = "Impatient Joker",
                 text = { "Earn {C:money}$#1#{} and gain",
                     "{C:chips}+#2#{} Chips when",
                     "skipping a Blind",
                     "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips)" }
             },
-            j_serenosThing_Jokester = {
+            j_biasedBalance_Jokester = {
                 name = "Jokester",
                 text = { "Earn {C:money}$#1#{} per Joker", "at end of round", "{C:inactive}(Will give {C:money}$#2#{C:inactive})" }
             },
-            j_serenosThing_RedSun = {
+            j_biasedBalance_RedSun = {
                 name = "Red Sun",
                 text = { "{X:mult,C:white}X#1#{} Mult if played hand", "contains both a {C:diamonds}Diamond{} and {C:hearts}Heart", "card and no other suits" }
             },
-            j_serenosThing_WhiteHole = {
+            j_biasedBalance_WhiteHole = {
                 name = "White Hole",
                 text = { "After {C:attention}#1#{} rounds,",
                     "sell this card to",
                     "{C:planet}level up{} every {C:attention}Poker Hand",
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)", }
             },
-            j_serenosThing_Cinemaphile = {
+            j_biasedBalance_Cinemaphile = {
                 name = "Cinemaphile",
                 text = { "Sell this card to",
                     "add a {C:attention}Voucher{} to the shop", }
             },
-            j_serenosThing_Trinity = {
+            j_biasedBalance_Trinity = {
                 name = "Trinity",
                 text = { "{X:mult,C:white}X#1#{} Mult if played hand", "contains at least {C:attention}#2#{} suits" }
             },
-            j_serenosThing_Snob = {
+            j_biasedBalance_Snob = {
                 name = "Snob",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult,",
@@ -182,7 +182,7 @@ return {
                     "{C:inactive}Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
             },
-            j_serenosThing_AlienJoker = {
+            j_biasedBalance_AlienJoker = {
                 name = "Alien Joker",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult per Poker Hand",
@@ -190,14 +190,14 @@ return {
                     "{C:inactive}Currently {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
             },
-            j_serenosThing_FreeLunch = {
+            j_biasedBalance_FreeLunch = {
                 name = '"Free" Lunch',
                 text = {
                     "Costs {C:money}-$#1#",
                     "Sells for {C:money}-$#2#"
                 }
             },
-            j_serenosThing_Osmosis = {
+            j_biasedBalance_Osmosis = {
                 name = 'Osmosis',
                 text = {
                     "{C:mult}+#1#{} Mult per card above",
@@ -205,21 +205,21 @@ return {
                     "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
                 }
             },
-            j_serenosThing_Leprechaun = {
+            j_biasedBalance_Leprechaun = {
                 name = 'Leprechaun',
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if you",
                     "have {C:money}$#2#{} or more"
                 }
             },
-            j_serenosThing_Anchor = {
+            j_biasedBalance_Anchor = {
                 name = "The Anchor",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if current",
                     "score has {C:chips}#2#{} Chips or more"
                 }
             },
-            j_serenosThing_Rivals = {
+            j_biasedBalance_Rivals = {
                 name = "The Rivals",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if played",
@@ -227,7 +227,7 @@ return {
                     "a {C:attention}#2#",
                 }
             },
-            j_serenosThing_BluntedImpact = {
+            j_biasedBalance_BluntedImpact = {
                 name = "Blunted Impact",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if played hand",
@@ -236,7 +236,7 @@ return {
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive})"
                 }
             },
-            j_serenosThing_DeathAndTaxes = {
+            j_biasedBalance_DeathAndTaxes = {
                 name = "Death and Taxes",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if a Joker",
@@ -244,14 +244,14 @@ return {
                     "Jokers sell for {C:money}$0"
                 }
             },
-            j_serenosThing_FlavourfulJoker = {
+            j_biasedBalance_FlavourfulJoker = {
                 name = "Flavourful Joker",
                 text = {
                     "{C:chips}+#1#{} Chips per Joker",
                     "with an {C:dark_edition}Edition"
                 }
             },
-            j_serenosThing_MelancholicJoker = {
+            j_biasedBalance_MelancholicJoker = {
                 name = "Melancholic Joker",
                 text = {
                     "After {C:attention}#1#{} rounds,",
@@ -260,14 +260,14 @@ return {
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)",
                 }
             },
-            j_serenosThing_BrashGambler = {
+            j_biasedBalance_BrashGambler = {
                 name = "Brash Gambler",
                 text = {
                     "{C:green}#1# in #2#{} chance for {X:mult,C:white}X#3#{} Mult,",
                     "{C:green}#1# in #4#{} chance for {X:mult,C:white}X#5#{} Mult",
                 }
             },
-            j_serenosThing_Bookworm = {
+            j_biasedBalance_Bookworm = {
                 name = "Bookworm",
                 text = {
                     "{C:chips}+#1#{} Chips if played",
@@ -275,28 +275,28 @@ return {
                     "your most played"
                 }
             },
-            j_serenosThing_Court = {
+            j_biasedBalance_Court = {
                 name = "The Court",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if played hand",
                     "only contains {C:attention}Face Cards"
                 }
             },
-            j_serenosThing_Parvenu = {
+            j_biasedBalance_Parvenu = {
                 name = "The Parvenu",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if played hand",
                     "contains {C:red}no{} {C:attention}Face Cards"
                 }
             },
-            j_serenosThing_Skipper = {
+            j_biasedBalance_Skipper = {
                 name = "Skipper",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if a Blind",
                     "was {C:attention}skipped{} this {C:attention}round"
                 }
             },
-            j_serenosThing_Minstrel = {
+            j_biasedBalance_Minstrel = {
                 name = "Minstrel",
                 text = {
                     "{C:attention}+#1#{} discards,",
@@ -304,14 +304,14 @@ return {
                     "cards at once"
                 }
             },
-            j_serenosThing_Jumbo = {
+            j_biasedBalance_Jumbo = {
                 name = "Jumbo",
                 text = {
                     "{C:mult}+#1#{} Mult,",
                     "{C:dark_edition}-#2#{} Joker slot"
                 }
             },
-            j_serenosThing_Spooky = {
+            j_biasedBalance_Spooky = {
                 name = "Spooky Joker",
                 text = {
                     "{C:green}#1# in #2#{} chance to",
@@ -352,14 +352,14 @@ return {
             tag_economy = {
                 text = { "Doubles your money", "{C:inactive}(Max of {C:money}$#1#{C:inactive},", "{C:inactive}Min of {C:money}$#2#{C:inactive})", }
             },
-            tag_serenosThing_Utility = {
+            tag_biasedBalance_Utility = {
                 name = 'Utility Tag',
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{} Utility {C:joker}Jokers",
                 }
             },
-            tag_serenosThing_Sacrifice = {
+            tag_biasedBalance_Sacrifice = {
                 name = 'Sacrifice Tag',
                 text = {
                     "Choose {C:attention}#1#{} cards,",
@@ -375,14 +375,14 @@ return {
             }
         },
         Other = {
-            p_serenosThing_Utility = {
+            p_biasedBalance_Utility = {
                 name = 'Utility Pack',
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{} Utility {C:joker}Jokers",
                 }
             },
-            p_serenosThing_Sacrifice = {
+            p_biasedBalance_Sacrifice = {
                 name = 'Sacrifice Pack',
                 text = {
                     "Choose {C:attention}#1#{} cards,",
@@ -390,7 +390,7 @@ return {
                     "give the rest a random {C:dark_edition}edition"
                 }
             },
-            p_serenosThing_GigaStandard = {
+            p_biasedBalance_GigaStandard = {
                 name = 'Giga Standard Pack',
                 text = {
                     "Choose {C:attention}#1#{} of up to",
@@ -418,14 +418,14 @@ return {
                     "{C:green}3X{} more common"
                 }
             },
-            b_serenosThing_Pink = {
+            b_biasedBalance_Pink = {
                 name = "Pink Deck",
                 text = {
                     "{C:common}Common{} Jokers are",
                     "less common"
                 }
             },
-            b_serenosThing_White = {
+            b_biasedBalance_White = {
                 name = "White Deck",
                 text = {
                     "When {C:attention}Small Blind{} or {C:attention}Big Blind{}",
@@ -433,7 +433,7 @@ return {
                     "{C:inactive}(Must have room)",
                 }
             },
-            b_serenosThing_Purple = {
+            b_biasedBalance_Purple = {
                 name = "Purple Deck",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
@@ -459,7 +459,7 @@ return {
             }
         },
         Spectral = {
-            c_serenosThing_Sacrifice2 = {
+            c_biasedBalance_Sacrifice2 = {
                 name = 'Sacrifice',
                 text = {
                     "Choose {C:attention}#1#{} cards,",
@@ -526,39 +526,39 @@ return {
                     "lose up to {C:money}$#1#",
                 }
             },
-            c_serenosThing_Conjuration = {
+            c_biasedBalance_Conjuration = {
                 name = "Conjuration",
                 text = {
                     "Create a free", "{C:attention}Double Tag"
                 }
             },
-            c_serenosThing_Phantom = {
+            c_biasedBalance_Phantom = {
                 name = "Phantom",
                 text = {
                     "Create a free {C:attention}Voucher Tag{},", "lose up to {C:money}$#1#"
                 }
             },
-            c_serenosThing_Stain = {
+            c_biasedBalance_Stain = {
                 name = "Stain",
                 text = {
                     "Add a random {C:attention}Seal", "to up to {C:attention}#1#{} selected", "playing cards,",
                     "lose up to {C:money}$#2#"
                 }
             },
-            c_serenosThing_Crossroads = {
+            c_biasedBalance_Crossroads = {
                 name = "Crossroads",
                 text = {
                     "Add a random {C:dark_edition}Edition", "to up to {C:attention}#1#{} selected", "playing cards,",
                     "lose up to {C:money}$#2#"
                 }
             },
-            c_serenosThing_Awakening = {
+            c_biasedBalance_Awakening = {
                 name = "Awakening",
                 text = {
                     "Reduce the odds of", "finding {C:common}Common{} Jokers"
                 }
             },
-            c_serenosThing_Sacrifice = {
+            c_biasedBalance_Sacrifice = {
                 name = "Sacrifice",
                 text = {
                     "{C:red}Destroys{} leftmost Joker,", "earn {C:money}$#1#"
@@ -583,14 +583,14 @@ return {
     },
     misc = {
         dictionary = {
-            k_booster_group_p_serenosThing_Utility = 'Utility Pack',
-            k_booster_group_p_serenosThing_Sacrifice = 'Sacrifice',
-            k_booster_group_p_serenosThing_GigaStandard = 'Giga Standard Pack',
-            k_booster_group_p_serenosThing_LowStickerBuffoon = 'Mega Buffoon Pack',
-            k_serenosThing_noRepeats = 'No repeat hand types',
+            k_booster_group_p_biasedBalance_Utility = 'Utility Pack',
+            k_booster_group_p_biasedBalance_Sacrifice = 'Sacrifice',
+            k_booster_group_p_biasedBalance_GigaStandard = 'Giga Standard Pack',
+            k_booster_group_p_biasedBalance_LowStickerBuffoon = 'Mega Buffoon Pack',
+            k_biasedBalance_noRepeats = 'No repeat hand types',
         },
         text = {
-            serenosThing_none = "None"
+            biasedBalance_none = "None"
         }
     }
 }

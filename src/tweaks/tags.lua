@@ -151,23 +151,23 @@ SMODS.Tag:take_ownership("meteor", {
     end
 })
 
-function SerenosThing.on_set_blind(blind)
+function BiasedBalance.on_set_blind(blind)
     for i = 1, #G.GAME.tags do
         G.GAME.tags[i]:apply_to_run({
-            type = 'serenosThing_set_blind',
+            type = 'biasedBalance_set_blind',
             blind = blind
         })
     end
 
     if G.GAME.selected_back and G.GAME.selected_back.effect and G.GAME.selected_back.effect.center and
-        G.GAME.selected_back.effect.center.key == 'b_serenosThing_White' and
+        G.GAME.selected_back.effect.center.key == 'b_biasedBalance_White' and
         not blind.boss then
         local jokers_to_create = math.min(1, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
         G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
         G.E_MANAGER:add_event(Event({
             func = function()
                 for i = 1, jokers_to_create do
-                    local card = create_card('Joker', G.jokers, nil, 0, nil, nil, nil, 'b_serenosThing_White')
+                    local card = create_card('Joker', G.jokers, nil, 0, nil, nil, nil, 'b_biasedBalance_White')
                     card:add_to_deck()
                     G.jokers:emplace(card)
                     card:start_materialize()
@@ -186,7 +186,7 @@ SMODS.Tag:take_ownership("boss", {
     apply = function(self, tag, context)
         if context.type == 'new_blind_choice' then return true end
 
-        if not tag.triggered and context.type == 'serenosThing_set_blind' and context.blind.boss then
+        if not tag.triggered and context.type == 'biasedBalance_set_blind' and context.blind.boss then
             G.E_MANAGER:add_event(Event {
                 func = function()
                     if context.blind.disabled or not context.blind.disable then
@@ -372,7 +372,7 @@ SMODS.Tag:take_ownership("standard", {
         from = 8,
     },
     loc_vars = function(self, info_queue, tag)
-        info_queue[#info_queue + 1] = G.P_CENTERS.p_serenosThing_GigaStandard
+        info_queue[#info_queue + 1] = G.P_CENTERS.p_biasedBalance_GigaStandard
         return { vars = { self.config.choose, self.config.from } }
     end,
     apply = function(self, tag, context)
