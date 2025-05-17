@@ -154,6 +154,7 @@ SMODS.Joker:take_ownership("bootstraps", {
         end
     end,
     add_to_deck = function(self, card, from_debuff)
+        card.ability.extra_value = -2
         G.GAME.inflation = G.GAME.inflation + card.ability.extra.dollars
         G.E_MANAGER:add_event(Event({
             func = function()
@@ -371,7 +372,7 @@ SMODS.Joker:take_ownership("red_card", {
 })
 
 SMODS.Joker:take_ownership("todo_list", {
-    rarity = 2,
+    rarity = 1,
     cost = 5,
     perishable_compat = false,
     config = { extra = { dollars = 4, poker_hand = 'High Card', dx_mult = 0.2, played = false } },

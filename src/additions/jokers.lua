@@ -286,7 +286,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = 3 },
+    config = { extra = 2.5 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra } }
     end,
@@ -326,7 +326,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = 6 },
+    config = { extra = 5 },
     loc_vars = function(self, info_queue, card)
         return { vars = { G.GAME.probabilities.normal, card.ability.extra } }
     end,
@@ -534,7 +534,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { x_mult = 3.5, d_x_mult = 0.1 } },
+    config = { extra = { x_mult = 3.25, d_x_mult = 0.1 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.x_mult, card.ability.extra.d_x_mult, card.ability.extra.x_mult - card.ability.extra.d_x_mult * count_snob() } }
     end,
@@ -1144,7 +1144,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { chips = 75 } },
+    config = { extra = { chips = 65 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.chips } }
     end,
@@ -1264,7 +1264,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { chips = 250 } },
+    config = { extra = { chips = 200 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.chips } }
     end,
@@ -1348,7 +1348,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { xmult = 3 } },
+    config = { extra = { xmult = 2.5 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,
