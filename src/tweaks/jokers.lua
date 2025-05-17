@@ -113,7 +113,7 @@ SMODS.Joker:take_ownership("to_the_moon", { rarity = 1 })
 
 SMODS.Joker:take_ownership("trousers", {
     rarity = 1,
-    config = { extra = { mult = 2, chips = 8 }, mult = 0, chips = 0 },
+    config = { extra = { mult = 2, chips = 6 }, mult = 0, chips = 0 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mult, card.ability.extra.chips, localize('Two Pair', 'poker_hands'), card.ability.mult, card.ability.chips } }
     end,
@@ -131,6 +131,10 @@ SMODS.Joker:take_ownership("trousers", {
                 mult = card.ability.mult,
                 extra = { chips = card.ability.chips }
             }
+        end
+
+        if context.joker_main then
+            return {}
         end
     end
 })

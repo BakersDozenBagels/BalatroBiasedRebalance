@@ -37,10 +37,11 @@ return {
             },
             j_trousers = {
                 text = {
-                    "This Joker gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
+                    "This Jokers gains and gives",
+                    "{C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
                     "if played hand contains",
                     "a {C:attention}#3#",
-                    "{C:inactive}(Currently {C:red}+#4#{C:inactive} Mult and {C:chips}+#5#{} Chips)",
+                    "{C:inactive}(Currently {C:red}+#4#{C:inactive} Mult and {C:chips}+#5#{C:inactive} Chips)",
                 },
             },
             j_seance = {
