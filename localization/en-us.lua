@@ -359,6 +359,18 @@ return {
                     "always have an {C:enhanced}Enhancement{},",
                     "{C:dark_edition}Edition{}, and/or a {C:attention}Seal{}",
                 }
+            },
+            v_hone = {
+                text = {
+                    "{C:dark_edition}Editioned{} cards",
+                    "appear {C:attention}#1#X{} more often",
+                }
+            },
+            v_glow_up = {
+                text = {
+                    "{C:dark_edition}Editioned{} cards",
+                    "appear {C:attention}#1#X{} more often",
+                }
             }
         },
         Tag = {

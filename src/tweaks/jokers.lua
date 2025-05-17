@@ -91,6 +91,7 @@ SMODS.Joker:take_ownership("scary_face", {
     end
 })
 SMODS.Joker:take_ownership("delayed_grat", {
+    rarity = 2,
     blueprint_compat = true,
     config = { extra = { dollars = 3, cards = 3 } },
     loc_vars = function(self, info_queue, card)
@@ -109,7 +110,7 @@ SMODS.Joker:take_ownership("ticket", { config = { extra = 5 } })
 SMODS.Joker:take_ownership("space", { rarity = 1 })
 SMODS.Joker:take_ownership("hiker", { rarity = 1 })
 SMODS.Joker:take_ownership("erosion", { rarity = 1, cost = 4 })
-SMODS.Joker:take_ownership("to_the_moon", { rarity = 1 })
+SMODS.Joker:take_ownership("to_the_moon", { rarity = 2 })
 
 SMODS.Joker:take_ownership("trousers", {
     rarity = 1,

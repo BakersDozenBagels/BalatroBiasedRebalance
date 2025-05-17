@@ -33,7 +33,7 @@ SMODS.Edition:take_ownership("negative", {
 
 local raw_get_weight = G.P_CENTERS.e_foil.get_weight
 SMODS.Edition:take_ownership("foil", {
-    config = setmetatable({ chips = 50 }, {
+    config = setmetatable({ chips = 60 }, {
         __index = function(t, k)
             if k == 'extra' then return t.chips end
             return rawget(t, k)

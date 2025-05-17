@@ -300,7 +300,7 @@ SMODS.Joker {
                     d = 1
                 elseif v:is_suit("Hearts") then
                     h = 1
-                else
+                elseif not SMODS.has_no_suit(v) then
                     return
                 end
             end
@@ -1079,9 +1079,9 @@ SMODS.Joker {
     perishable_compat = true,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play and context.other_card.config.center.key ~= 'c_base' then
-        return {
-            repetitions = 1
-        }
+            return {
+                repetitions = 1
+            }
         end
     end
 }
