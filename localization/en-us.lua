@@ -324,6 +324,12 @@ return {
                 text = {
                     "{C:attention}Enhancements{} are", "{C:attention}#1#%{} stronger"
                 }
+            },
+            j_biasedBalance_Chimera = {
+                name = "Chimera",
+                text = {
+                    "{C:attention}+#1#{} hand", "per round"
+                }
             }
         },
         Voucher = {
