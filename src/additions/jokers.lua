@@ -934,6 +934,55 @@ SMODS.Joker {
         ease_hands_played(-card.ability.extra)
     end
 }
+
+SMODS.Joker {
+    atlas = "Joker",
+    key = "WallPaper",
+    pos = {
+        x = 0,
+        y = 4
+    },
+    rarity = 2,
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = { x_mult = 2.25 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.x_mult, 2 } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local counts = {}
+            for suit in pairs(SMODS.Suits) do
+                counts[suit] = 0
+                for _, card in pairs(G.playing_cards) do
+                    if card:is_suit(suit) then
+                        counts[suit] = counts[suit] + 1
+                    end
+                end
+            end
+
+            local max, penmax = -1, -1
+            for _, v in pairs(counts) do
+                if v > max then
+                    penmax = max
+                    max = v
+                elseif v > penmax then
+                    penmax = v
+                end
+            end
+
+            for _, v in pairs(G.hand.cards) do
+                if not SMODS.has_any_suit(v) and counts[v.base.suit] < penmax then
+                    return nil, true
+                end
+            end
+
+            return { x_mult = card.ability.extra.x_mult }
+        end
+    end
+}
 --#endregion
 
 --#region Rare Jokers

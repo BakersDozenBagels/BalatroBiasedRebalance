@@ -330,6 +330,10 @@ return {
                 text = {
                     "{C:attention}+#1#{} hand", "per round"
                 }
+            },
+            j_biasedBalance_WallPaper = {
+                name = "Wall Paper",
+                text = { "{C:white,X:mult}X#1#{} Mult if all", "cards held in hand are", "the {C:attention}#2#{} most common", "suits in your full deck" }
             }
         },
         Voucher = {
