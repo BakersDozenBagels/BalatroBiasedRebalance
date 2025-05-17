@@ -1,15 +1,15 @@
 {
   "id": "biasedBalance",
   "name": "Balatro Biased Balance",
-  "author": ["BakersDozenBagels"],
-  "description": "",
+  "author": ["BakersDozenBagels", "Serenos"],
+  "description": "Mod design by Serenos, code by BakersDozenBagels",
   "prefix": "biasedBalance",
   "main_file": "src/main.lua",
   "priority": 0,
   "badge_colour": "ce1126",
   "badge_text_colour": "000000",
   "display_name": "Balatro Biased Balance",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": ["Steamodded (>=1.0.0~ALPHA-1304a)", "Lovely (>=0.6)"],
   "conflicts": [],
   "provides": []
