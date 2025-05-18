@@ -25,17 +25,28 @@ local function ban()
         { "campfire",   "hit_the_road" }
     }
 
-    local function ban_one(key, pool, rarity)
+    local function ban_one(key, rarity)
         G.P_CENTERS[key] = nil
+        SMODS.Centers[key] = nil
+        for _, pool in pairs(G.P_CENTER_POOLS) do
+            local ix = 1
+            while ix < #pool do
+                if pool[ix].key == key then
+                    table.remove(pool, ix)
+                else
+                    ix = ix + 1
+                end
+            end
+        end
         local ix = 1
-        while ix < #G.P_CENTER_POOLS[pool] do
-            if G.P_CENTER_POOLS[pool][ix].key == key then
-                table.remove(G.P_CENTER_POOLS[pool], ix)
+        while ix < #SMODS.Center.obj_buffer do
+            if SMODS.Center.obj_buffer[ix] == key then
+                table.remove(SMODS.Center.obj_buffer, ix)
             else
                 ix = ix + 1
             end
         end
-        if pool == "Joker" then
+        if rarity then
             ix = 1
             while ix < #G.P_JOKER_RARITY_POOLS[rarity] do
                 if G.P_JOKER_RARITY_POOLS[rarity][ix].key == key then
@@ -49,10 +60,10 @@ local function ban()
 
     for i, row in pairs(banned) do
         for _, v in pairs(row) do
-            ban_one("j_" .. v, "Joker", i)
+            ban_one("j_" .. v, i)
         end
     end
-    ban_one("c_grim", "Spectral")
+    ban_one("c_grim")
 end
 local raw_Game_init_item_prototypes = Game.init_item_prototypes
 function Game:init_item_prototypes()
