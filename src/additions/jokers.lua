@@ -331,7 +331,7 @@ SMODS.Joker {
         return { vars = { G.GAME.probabilities.normal, card.ability.extra } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.before then
             if pseudorandom(pseudoseed 'j_biasedBalance_Spooky') < G.GAME.probabilities.normal / card.ability.extra then
                 local eligible = {}
                 for _, v in ipairs(context.scoring_hand) do
@@ -349,6 +349,15 @@ SMODS.Joker {
                     })
                     edition_buffer[apply] = true
                     juice_card(context.blueprint_card or card)
+                    apply:set_edition(edition, true, true)
+                    G.E_MANAGER:add_event(Event {
+                        blockable = false,
+                        blocking = false,
+                        func = function()
+                            apply:set_edition(nil, true, true)
+                            return true
+                        end
+                    })
                     G.E_MANAGER:add_event(Event {
                         func = function()
                             apply:set_edition(edition, true)
