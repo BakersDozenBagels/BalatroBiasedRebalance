@@ -121,7 +121,8 @@ SMODS.Joker:take_ownership("ticket", { config = { extra = 5 } })
 SMODS.Joker:take_ownership("space", { rarity = 1 })
 SMODS.Joker:take_ownership("hiker", { rarity = 1 })
 SMODS.Joker:take_ownership("erosion", { rarity = 1, cost = 4 })
-SMODS.Joker:take_ownership("to_the_moon", { rarity = 2 })
+SMODS.Joker:take_ownership("to_the_moon", { rarity = 1 })
+SMODS.Joker:take_ownership("cloud_9", { rarity = 1 })
 
 SMODS.Joker:take_ownership("trousers", {
     rarity = 1,
