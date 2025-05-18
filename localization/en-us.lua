@@ -334,7 +334,7 @@ return {
             },
             j_biasedBalance_WallPaper = {
                 name = "Wall Paper",
-                text = { "{C:white,X:mult}X#1#{} Mult if all", "cards held in hand are", "the {C:attention}#2#{} most common", "suits in your full deck" }
+                text = { "{C:white,X:mult}X#1#{} Mult if all", "cards played and held in hand", "are the {C:attention}#2#{} most common", "suits in your full deck" }
             },
             j_biasedBalance_Poacher = {
                 name = "Poacher",

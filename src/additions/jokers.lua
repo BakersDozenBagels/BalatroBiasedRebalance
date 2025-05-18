@@ -975,17 +975,21 @@ SMODS.Joker {
 
             local hand_suits_i = {}
             local hand_suits = {}
-            for _, v in pairs(G.hand.cards) do
-                if not SMODS.has_any_suit(v) then
-                    if counts[v.base.suit] < penmax then
-                        return nil, true
-                    end
-                    if not hand_suits[v.base.suit] then
-                        hand_suits_i[#hand_suits_i + 1] = v.base.suit
-                        hand_suits[v.base.suit] = true
+            local function check_area(a)
+                for _, v in pairs(a.cards) do
+                    if not SMODS.has_any_suit(v) then
+                        if counts[v.base.suit] < penmax then
+                            return nil, true
+                        end
+                        if not hand_suits[v.base.suit] then
+                            hand_suits_i[#hand_suits_i + 1] = v.base.suit
+                            hand_suits[v.base.suit] = true
+                        end
                     end
                 end
             end
+            check_area(G.hand)
+            check_area(G.play)
 
             if #hand_suits_i > 2 or (#hand_suits_i == 2 and counts[hand_suits_i[1]] < max and counts[hand_suits_i[2]] < max) then
                 return nil, true
