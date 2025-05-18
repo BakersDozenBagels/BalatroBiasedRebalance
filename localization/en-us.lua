@@ -338,7 +338,7 @@ return {
             },
             j_biasedBalance_Poacher = {
                 name = "Poacher",
-                text = { "{C:green}#1# in #2#{} chance to", "enhance each {C:attention}unenhanced{}", "scored card to {C:attention}Wild" }
+                text = { "{C:green}#1# in #2#{} chance to", "enhance each", "scored card to {C:attention}Wild" }
             },
             j_biasedBalance_Toucan = {
                 name = "Toucan",

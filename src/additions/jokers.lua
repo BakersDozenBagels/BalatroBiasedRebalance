@@ -1018,7 +1018,7 @@ SMODS.Joker {
         return { vars = { G.GAME.probabilities.normal, card.ability.extra } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card.config.center.key == 'c_base' then
+        if context.individual and context.cardarea == G.play then
             if not context.other_card.biasedBalance_buffer and pseudorandom 'j_biasedBalance_Poacher' < G.GAME.probabilities.normal / card.ability.extra then
                 local other_card = context.other_card
                 other_card.biasedBalance_buffer = true
