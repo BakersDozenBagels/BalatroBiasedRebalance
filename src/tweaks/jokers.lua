@@ -243,6 +243,7 @@ SMODS.Joker:take_ownership("seance", {
                     found[#found + 1] = v
                 end
             end
+            if #found == 0 then return end
             -- if #found == 0 or pseudorandom(pseudoseed('seance')) > G.GAME.probabilities.normal / card.ability.extra.odds then return end
 
             local card = pseudorandom_element(found, pseudoseed('seance2'))
