@@ -25,7 +25,7 @@ pattern = '_card = {set = "Planet", area = G.pack_cards, skip_materialize = true
 position = 'before'
 match_indent = true
 payload = '''
-if G.GAME.used_vouchers.v_omen_globe and pseudorandom('omen_globe') > 0.8 then
+if G.GAME.used_vouchers.v_omen_globe and pseudorandom('omen_globe') > 0.75 then
     _card = {set = "Spectral", area = G.pack_cards, skip_materialize = true, soulable = true, key_append = "pl2"}
 else
 '''
