@@ -264,8 +264,7 @@ SMODS.Joker:take_ownership("seance", {
             }))
             return {
                 message = localize('k_plus_spectral'),
-                colour = G.C.SECONDARY_SET.Spectral,
-                card = self
+                colour = G.C.SECONDARY_SET.Spectral
             }
         end
         if context.joker_main then return {} end
