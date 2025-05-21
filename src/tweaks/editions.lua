@@ -75,3 +75,25 @@ function poll_edition(k, m, n, ...)
     polling_playing = n
     return raw_poll_edition(k, m, k == "wheel_of_fortune", ...)
 end
+
+local raw_Card_set_debuff = Card.set_debuff
+local drawing = false
+function Card:set_debuff(should, ...)
+    local prev = self.debuff
+    raw_Card_set_debuff(self, should, ...)
+    local do_draw = prev and not self.debuff and self.edition and self.edition.card_limit and self.area == G.hand
+    if do_draw then
+        G.hand.config.real_card_limit = G.hand.config.real_card_limit + self.edition.card_limit
+        G.hand.config.card_limit = G.hand.config.card_limit + self.edition.card_limit
+        if not drawing then
+            drawing = true
+            G.E_MANAGER:add_event(Event {
+                func = function()
+                    G.FUNCS.draw_from_deck_to_hand()
+                    drawing = false
+                    return true
+                end
+            })
+        end
+    end
+end
